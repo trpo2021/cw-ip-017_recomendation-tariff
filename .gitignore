@@ -1,0 +1,9 @@
+src/.vs
+src/bin
+src/obj
+src/Properties
+src/App.config
+src/Tariff_Project.sln
+src/Tariff_Project.csproj
+.vs
+
