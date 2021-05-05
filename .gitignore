@@ -6,4 +6,6 @@ src/App.config
 src/Tariff_Project.sln
 src/Tariff_Project.csproj
 .vs
+Vs_Progect_Tariff/
+!Vs_Project_Tariff/Images/
 
