@@ -19,7 +19,7 @@ namespace Vs_Progect_Tariff
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            pictureBox1.BackColor = Color.Transparent;
         }
     }
 }
