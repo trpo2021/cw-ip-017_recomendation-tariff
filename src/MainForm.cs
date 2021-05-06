@@ -21,5 +21,35 @@ namespace Vs_Progect_Tariff
         {
             pictureBox1.BackColor = Color.Transparent;
         }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        Point LastPoint;
+        private void MainPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - LastPoint.X;
+                this.Top += e.Y - LastPoint.Y;
+            }
+        }
+
+        private void MainPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            LastPoint = new Point(e.X, e.Y);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Опа");
+        }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
