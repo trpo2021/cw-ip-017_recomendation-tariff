@@ -42,11 +42,6 @@ namespace Vs_Progect_Tariff
             LastPoint = new Point(e.X, e.Y);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Опа");
-        }
-
         private void MinimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

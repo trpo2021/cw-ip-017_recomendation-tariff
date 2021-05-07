@@ -35,22 +35,37 @@ namespace Vs_Progect_Tariff
             this.MainPanel = new System.Windows.Forms.Panel();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.IconPicture = new System.Windows.Forms.PictureBox();
+            this.UserMoney = new System.Windows.Forms.TextBox();
+            this.UserEthernet = new System.Windows.Forms.TextBox();
+            this.UserMinutes = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.StartButton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(159, 97);
+            this.pictureBox1.Image = global::Vs_Progect_Tariff.TariffResource.BeelineIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 423);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(149, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // CloseButton
             // 
@@ -62,9 +77,9 @@ namespace Vs_Progect_Tariff
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CloseButton.Location = new System.Drawing.Point(444, 0);
+            this.CloseButton.Location = new System.Drawing.Point(919, 0);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(56, 31);
+            this.CloseButton.Size = new System.Drawing.Size(56, 32);
             this.CloseButton.TabIndex = 1;
             this.CloseButton.Text = "X";
             this.CloseButton.UseVisualStyleBackColor = false;
@@ -73,13 +88,14 @@ namespace Vs_Progect_Tariff
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.Black;
+            this.MainPanel.Controls.Add(this.label4);
             this.MainPanel.Controls.Add(this.MinimizeButton);
             this.MainPanel.Controls.Add(this.IconPicture);
             this.MainPanel.Controls.Add(this.CloseButton);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(500, 31);
+            this.MainPanel.Size = new System.Drawing.Size(975, 31);
             this.MainPanel.TabIndex = 2;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
@@ -94,9 +110,9 @@ namespace Vs_Progect_Tariff
             this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinimizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinimizeButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.MinimizeButton.Location = new System.Drawing.Point(391, 0);
+            this.MinimizeButton.Location = new System.Drawing.Point(866, 0);
             this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(56, 31);
+            this.MinimizeButton.Size = new System.Drawing.Size(56, 32);
             this.MinimizeButton.TabIndex = 4;
             this.MinimizeButton.Text = "-";
             this.MinimizeButton.UseVisualStyleBackColor = false;
@@ -105,7 +121,7 @@ namespace Vs_Progect_Tariff
             // IconPicture
             // 
             this.IconPicture.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.IconPicture.Image = ((System.Drawing.Image)(resources.GetObject("IconPicture.Image")));
+            this.IconPicture.Image = global::Vs_Progect_Tariff.TariffResource.IconTariff1;
             this.IconPicture.Location = new System.Drawing.Point(3, 0);
             this.IconPicture.Name = "IconPicture";
             this.IconPicture.Size = new System.Drawing.Size(19, 31);
@@ -113,25 +129,155 @@ namespace Vs_Progect_Tariff
             this.IconPicture.TabIndex = 3;
             this.IconPicture.TabStop = false;
             // 
+            // UserMoney
+            // 
+            this.UserMoney.Location = new System.Drawing.Point(343, 119);
+            this.UserMoney.Name = "UserMoney";
+            this.UserMoney.Size = new System.Drawing.Size(176, 20);
+            this.UserMoney.TabIndex = 3;
+            // 
+            // UserEthernet
+            // 
+            this.UserEthernet.Location = new System.Drawing.Point(344, 179);
+            this.UserEthernet.Name = "UserEthernet";
+            this.UserEthernet.Size = new System.Drawing.Size(176, 20);
+            this.UserEthernet.TabIndex = 4;
+            // 
+            // UserMinutes
+            // 
+            this.UserMinutes.Location = new System.Drawing.Point(344, 237);
+            this.UserMinutes.Name = "UserMinutes";
+            this.UserMinutes.Size = new System.Drawing.Size(175, 20);
+            this.UserMinutes.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(8, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 23);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Максимально возможные затраты";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 179);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(240, 23);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Кол-во гигабайт интернета";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 237);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 23);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Кол-во минут";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(28, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 23);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Recomendation Tariff";
+            // 
+            // StartButton
+            // 
+            this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartButton.ForeColor = System.Drawing.Color.White;
+            this.StartButton.Location = new System.Drawing.Point(343, 320);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Size = new System.Drawing.Size(176, 23);
+            this.StartButton.TabIndex = 9;
+            this.StartButton.Text = "Подобрать тариф";
+            this.StartButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1, 535);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pictureBox3.Location = new System.Drawing.Point(974, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1, 535);
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 534);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(975, 50);
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(975, 1);
+            this.pictureBox5.TabIndex = 13;
+            this.pictureBox5.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(500, 350);
+            this.ClientSize = new System.Drawing.Size(975, 535);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.StartButton);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.UserMinutes);
+            this.Controls.Add(this.UserEthernet);
+            this.Controls.Add(this.UserMoney);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Recomendation Tariff";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainPanel.ResumeLayout(false);
+            this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -142,6 +288,18 @@ namespace Vs_Progect_Tariff
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.PictureBox IconPicture;
         private System.Windows.Forms.Button MinimizeButton;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox UserMoney;
+        private System.Windows.Forms.TextBox UserEthernet;
+        private System.Windows.Forms.TextBox UserMinutes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button StartButton;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 
