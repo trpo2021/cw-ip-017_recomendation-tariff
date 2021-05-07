@@ -33,6 +33,7 @@ namespace Vs_Progect_Tariff
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CloseButton = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.IconPicture = new System.Windows.Forms.PictureBox();
             this.UserMoney = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@ namespace Vs_Progect_Tariff
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -100,6 +100,17 @@ namespace Vs_Progect_Tariff
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(28, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 23);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Recomendation Tariff";
+            // 
             // MinimizeButton
             // 
             this.MinimizeButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -135,6 +146,8 @@ namespace Vs_Progect_Tariff
             this.UserMoney.Name = "UserMoney";
             this.UserMoney.Size = new System.Drawing.Size(176, 20);
             this.UserMoney.TabIndex = 3;
+            this.UserMoney.Enter += new System.EventHandler(this.UserMoney_Enter);
+            this.UserMoney.Leave += new System.EventHandler(this.UserMoney_Leave);
             // 
             // UserEthernet
             // 
@@ -142,6 +155,8 @@ namespace Vs_Progect_Tariff
             this.UserEthernet.Name = "UserEthernet";
             this.UserEthernet.Size = new System.Drawing.Size(176, 20);
             this.UserEthernet.TabIndex = 4;
+            this.UserEthernet.Enter += new System.EventHandler(this.UserEthernet_Enter);
+            this.UserEthernet.Leave += new System.EventHandler(this.UserEthernet_Leave);
             // 
             // UserMinutes
             // 
@@ -149,6 +164,8 @@ namespace Vs_Progect_Tariff
             this.UserMinutes.Name = "UserMinutes";
             this.UserMinutes.Size = new System.Drawing.Size(175, 20);
             this.UserMinutes.TabIndex = 5;
+            this.UserMinutes.Enter += new System.EventHandler(this.UserMinutes_Enter);
+            this.UserMinutes.Leave += new System.EventHandler(this.UserMinutes_Leave);
             // 
             // label1
             // 
@@ -182,17 +199,6 @@ namespace Vs_Progect_Tariff
             this.label3.Size = new System.Drawing.Size(123, 23);
             this.label3.TabIndex = 8;
             this.label3.Text = "Кол-во минут";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(28, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 23);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Recomendation Tariff";
             // 
             // StartButton
             // 
