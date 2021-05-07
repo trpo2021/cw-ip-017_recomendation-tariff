@@ -211,6 +211,7 @@ namespace Vs_Progect_Tariff
             this.StartButton.TabIndex = 9;
             this.StartButton.Text = "Подобрать тариф";
             this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // pictureBox2
             // 

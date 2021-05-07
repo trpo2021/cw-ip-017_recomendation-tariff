@@ -16,8 +16,8 @@ namespace Vs_Progect_Tariff
         {
             InitializeComponent();
             UserMoney.Text = "Введите сумму денег";
-            UserEthernet.Text = "Гиги";
-            UserMinutes.Text = "Минуты";
+            UserEthernet.Text = "Введите гиги";
+            UserMinutes.Text = "Введите минуты";
             UserMoney.ForeColor = Color.Gray;
             UserEthernet.ForeColor = Color.Gray;
             UserMinutes.ForeColor = Color.Gray;
@@ -73,7 +73,7 @@ namespace Vs_Progect_Tariff
 
         private void UserEthernet_Enter(object sender, EventArgs e)
         {
-            if (UserEthernet.Text == "Гиги")
+            if (UserEthernet.Text == "Введите гиги")
             {
                 UserEthernet.Text = "";
                 UserEthernet.ForeColor = Color.Black;
@@ -84,14 +84,14 @@ namespace Vs_Progect_Tariff
         {
             if (UserEthernet.Text == "")
             {
-                UserEthernet.Text = "Гиги";
+                UserEthernet.Text = "Введите гиги";
                 UserEthernet.ForeColor = Color.Gray;
             }
         }
 
         private void UserMinutes_Enter(object sender, EventArgs e)
         {
-            if (UserMinutes.Text == "Минуты")
+            if (UserMinutes.Text == "Введите минуты")
             {
                 UserMinutes.Text = "";
                 UserMinutes.ForeColor = Color.Black;
@@ -102,8 +102,27 @@ namespace Vs_Progect_Tariff
         {
             if (UserMinutes.Text == "")
             {
-                UserMinutes.Text = "Минуты";
+                UserMinutes.Text = "Введите минуты";
                 UserMinutes.ForeColor = Color.Gray;
+            }
+        }
+
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            if (UserMinutes.Text == "Введите минуты")
+            {
+                MessageBox.Show("Ведите минуты");
+                return;
+            }
+            if (UserEthernet.Text == "Введиде гиги")
+            {
+                MessageBox.Show("Введиде гиги");
+                return;
+            }
+            if (UserMoney.Text == "Введите сумму денег")
+            {
+                MessageBox.Show("Введите сумму денег");
+                return;
             }
         }
     }
