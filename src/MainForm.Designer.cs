@@ -37,20 +37,23 @@ namespace Vs_Progect_Tariff
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.IconPicture = new System.Windows.Forms.PictureBox();
             this.UserMoney = new System.Windows.Forms.TextBox();
-            this.UserEthernet = new System.Windows.Forms.TextBox();
+            this.UserGigi = new System.Windows.Forms.TextBox();
             this.UserMinutes = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.LeftBorder = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.WriteButton = new System.Windows.Forms.Button();
+            this.ShowAllTariffs = new System.Windows.Forms.Button();
+            this.OutTextBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -149,14 +152,14 @@ namespace Vs_Progect_Tariff
             this.UserMoney.Enter += new System.EventHandler(this.UserMoney_Enter);
             this.UserMoney.Leave += new System.EventHandler(this.UserMoney_Leave);
             // 
-            // UserEthernet
+            // UserGigi
             // 
-            this.UserEthernet.Location = new System.Drawing.Point(344, 179);
-            this.UserEthernet.Name = "UserEthernet";
-            this.UserEthernet.Size = new System.Drawing.Size(176, 20);
-            this.UserEthernet.TabIndex = 4;
-            this.UserEthernet.Enter += new System.EventHandler(this.UserEthernet_Enter);
-            this.UserEthernet.Leave += new System.EventHandler(this.UserEthernet_Leave);
+            this.UserGigi.Location = new System.Drawing.Point(344, 179);
+            this.UserGigi.Name = "UserGigi";
+            this.UserGigi.Size = new System.Drawing.Size(176, 20);
+            this.UserGigi.TabIndex = 4;
+            this.UserGigi.Enter += new System.EventHandler(this.UserEthernet_Enter);
+            this.UserGigi.Leave += new System.EventHandler(this.UserEthernet_Leave);
             // 
             // UserMinutes
             // 
@@ -213,14 +216,14 @@ namespace Vs_Progect_Tariff
             this.StartButton.UseVisualStyleBackColor = true;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
-            // pictureBox2
+            // LeftBorder
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1, 535);
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            this.LeftBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.LeftBorder.Location = new System.Drawing.Point(0, 0);
+            this.LeftBorder.Name = "LeftBorder";
+            this.LeftBorder.Size = new System.Drawing.Size(1, 535);
+            this.LeftBorder.TabIndex = 10;
+            this.LeftBorder.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -249,6 +252,47 @@ namespace Vs_Progect_Tariff
             this.pictureBox5.TabIndex = 13;
             this.pictureBox5.TabStop = false;
             // 
+            // WriteButton
+            // 
+            this.WriteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.WriteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WriteButton.ForeColor = System.Drawing.Color.White;
+            this.WriteButton.Location = new System.Drawing.Point(742, 499);
+            this.WriteButton.Name = "WriteButton";
+            this.WriteButton.Size = new System.Drawing.Size(221, 23);
+            this.WriteButton.TabIndex = 15;
+            this.WriteButton.Text = "Добавить новый тариф в базу данных";
+            this.WriteButton.UseVisualStyleBackColor = true;
+            this.WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
+            // 
+            // ShowAllTariffs
+            // 
+            this.ShowAllTariffs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ShowAllTariffs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAllTariffs.ForeColor = System.Drawing.Color.White;
+            this.ShowAllTariffs.Location = new System.Drawing.Point(504, 499);
+            this.ShowAllTariffs.Name = "ShowAllTariffs";
+            this.ShowAllTariffs.Size = new System.Drawing.Size(176, 23);
+            this.ShowAllTariffs.TabIndex = 16;
+            this.ShowAllTariffs.Text = "Вывести все тарифы";
+            this.ShowAllTariffs.UseVisualStyleBackColor = true;
+            this.ShowAllTariffs.Click += new System.EventHandler(this.ShowAllTariffs_Click);
+            // 
+            // OutTextBox
+            // 
+            this.OutTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.OutTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OutTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.OutTextBox.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OutTextBox.ForeColor = System.Drawing.Color.White;
+            this.OutTextBox.Location = new System.Drawing.Point(602, 38);
+            this.OutTextBox.Name = "OutTextBox";
+            this.OutTextBox.ReadOnly = true;
+            this.OutTextBox.Size = new System.Drawing.Size(361, 305);
+            this.OutTextBox.TabIndex = 17;
+            this.OutTextBox.Text = "";
+            this.OutTextBox.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,16 +301,19 @@ namespace Vs_Progect_Tariff
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(975, 535);
             this.ControlBox = false;
+            this.Controls.Add(this.OutTextBox);
+            this.Controls.Add(this.ShowAllTariffs);
+            this.Controls.Add(this.WriteButton);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.LeftBorder);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UserMinutes);
-            this.Controls.Add(this.UserEthernet);
+            this.Controls.Add(this.UserGigi);
             this.Controls.Add(this.UserMoney);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.pictureBox1);
@@ -279,7 +326,7 @@ namespace Vs_Progect_Tariff
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -297,16 +344,19 @@ namespace Vs_Progect_Tariff
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox UserMoney;
-        private System.Windows.Forms.TextBox UserEthernet;
+        private System.Windows.Forms.TextBox UserGigi;
         private System.Windows.Forms.TextBox UserMinutes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox LeftBorder;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button WriteButton;
+        private System.Windows.Forms.Button ShowAllTariffs;
+        private System.Windows.Forms.RichTextBox OutTextBox;
     }
 }
 
