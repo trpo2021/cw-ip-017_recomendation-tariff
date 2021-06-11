@@ -9,27 +9,41 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace Vs_Progect_Tariff
+
+namespace Project
 {
+    
     public partial class MainForm : Form
     {
-        public const string Path = @"C:\Users\saw27\Downloads\program\trpo\Kursach\New\cw-ip-017_recomendation-tariff\DataBase.txt";
+        public const string Path = "..\\DataBase.txt";
+        public void Lv(TextBox box, string text)
+        {
+            if (box.Text == "")
+            {
+                box.Text = text;
+                box.ForeColor = Color.Gray;
+            }
+        }
+        public void Ent(TextBox box, string text)
+        {
+            if (box.Text == text)
+            {
+                box.Text = "";
+                box.ForeColor = Color.Black;
+            }
+        }
+
         public MainForm()
         {
             InitializeComponent();
+            Icon = new Icon("..\\images\\iconTariff.ico");
+            IconPicture.Image = Image.FromFile("..\\images\\iconTariff.png");
             UserMoney.Text = "Введите сумму денег";
             UserGigi.Text = "Введите гиги";
             UserMinutes.Text = "Введите минуты";
             UserMoney.ForeColor = Color.Gray;
             UserGigi.ForeColor = Color.Gray;
             UserMinutes.ForeColor = Color.Gray;
-
-
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            pictureBox1.BackColor = Color.Transparent;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -37,6 +51,10 @@ namespace Vs_Progect_Tariff
             Application.Exit();
         }
 
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
         Point LastPoint;
         private void MainPanel_MouseMove(object sender, MouseEventArgs e)
         {
@@ -46,69 +64,37 @@ namespace Vs_Progect_Tariff
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-
         private void MainPanel_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
         }
-
-        private void MinimizeButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void UserMoney_Enter(object sender, EventArgs e)
         {
-            if (UserMoney.Text == "Введите сумму денег")
-            {
-                UserMoney.Text = "";
-                UserMoney.ForeColor = Color.Black;
-            }
+            Ent(UserMoney, "Введите сумму денег");
         }
-
         private void UserMoney_Leave(object sender, EventArgs e)
         {
-            if (UserMoney.Text == "")
-            {
-                UserMoney.Text = "Введите сумму денег";
-                UserMoney.ForeColor = Color.Gray;
-            }
+            Lv(UserMoney, "Введите сумму денег");
         }
 
-        private void UserEthernet_Enter(object sender, EventArgs e)
+        private void UserGigi_Enter(object sender, EventArgs e)
         {
-            if (UserGigi.Text == "Введите гиги")
-            {
-                UserGigi.Text = "";
-                UserGigi.ForeColor = Color.Black;
-            }
+            Ent(UserGigi, "Введите гиги");
         }
 
-        private void UserEthernet_Leave(object sender, EventArgs e)
+        private void UserGigi_Leave(object sender, EventArgs e)
         {
-            if (UserGigi.Text == "")
-            {
-                UserGigi.Text = "Введите гиги";
-                UserGigi.ForeColor = Color.Gray;
-            }
+            Lv(UserGigi, "Введите гиги");
         }
 
         private void UserMinutes_Enter(object sender, EventArgs e)
         {
-            if (UserMinutes.Text == "Введите минуты")
-            {
-                UserMinutes.Text = "";
-                UserMinutes.ForeColor = Color.Black;
-            }
+            Ent(UserMinutes, "Введите минуты");
         }
 
         private void UserMinutes_Leave(object sender, EventArgs e)
         {
-            if (UserMinutes.Text == "")
-            {
-                UserMinutes.Text = "Введите минуты";
-                UserMinutes.ForeColor = Color.Gray;
-            }
+            Lv(UserMinutes, "Введите минуты");
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -120,7 +106,7 @@ namespace Vs_Progect_Tariff
             }
             if (UserGigi.Text == "Введиде гиги")
             {
-                MessageBox.Show("Введиде гиги");
+                MessageBox.Show("Введите гиги");
                 return;
             }
             if (UserMoney.Text == "Введите сумму денег")
@@ -128,23 +114,18 @@ namespace Vs_Progect_Tariff
                 MessageBox.Show("Введите сумму денег");
                 return;
             }
-            int Thisgigi, ThisMinutes, ThisMoney, Money, Gigi, Minutes, OptimalMoney, OptimalGigi, OptimalMinutes;
             bool flag = false;
-
             using (StreamReader sr = new StreamReader(Path))
             {
-                ClassTariffs optimalTariff = new ClassTariffs
+                ClassTariff thisTariff = new ClassTariff();
+                ClassTariff optimalTariff = new ClassTariff
                 {
                     money = "1000000",
                     gigi = "0",
                     minutes = "0"
                 };
-                ClassTariffs thisTariff = new ClassTariffs();
                 string[] strClass = new string[5];
                 string line;
-                Money = Convert.ToInt32(UserMoney.Text);
-                Gigi = Convert.ToInt32(UserGigi.Text);
-                Minutes = Convert.ToInt32(UserMinutes.Text);
                 while ((line = sr.ReadLine()) != null)
                 {
                     int classUnit = 0;
@@ -164,31 +145,24 @@ namespace Vs_Progect_Tariff
                     for (int i = 0; i < 5; ++i)
                         strClass[i] = "";
 
-                    ThisMoney = Convert.ToInt32(thisTariff.money);
-                    Thisgigi = Convert.ToInt32(thisTariff.gigi);
-                    ThisMinutes = Convert.ToInt32(thisTariff.minutes);
-                    OptimalMoney = Convert.ToInt32(optimalTariff.money);
-                    OptimalGigi = Convert.ToInt32(optimalTariff.gigi);
-                    OptimalMinutes = Convert.ToInt32(optimalTariff.minutes);
-                    
-                    if ( ThisMoney <= Money && ThisMoney <= OptimalMoney  &&
-                         Thisgigi >= Gigi && ThisMinutes >= Minutes )
+                    if (Convert.ToInt32(thisTariff.money) <= Convert.ToInt32(UserMoney.Text) &&
+                        Convert.ToInt32(thisTariff.money) <= Convert.ToInt32(optimalTariff.money) &&
+                         Convert.ToInt32(thisTariff.gigi) >= Convert.ToInt32(UserGigi.Text) &&
+                         Convert.ToInt32(thisTariff.minutes) >= Convert.ToInt32(UserMinutes.Text) &&
+                         Convert.ToInt32(thisTariff.gigi)+ Convert.ToInt32(thisTariff.minutes)> Convert.ToInt32(optimalTariff.gigi) + Convert.ToInt32(optimalTariff.minutes))
                     {
-                        if (Thisgigi + ThisMinutes >= OptimalMinutes + OptimalGigi)
-                        {
-                            optimalTariff.mobileOperator = thisTariff.mobileOperator;
-                            optimalTariff.name = thisTariff.name;
-                            optimalTariff.money = thisTariff.money;
-                            optimalTariff.gigi = thisTariff.gigi;
-                            optimalTariff.minutes = thisTariff.minutes;
-                            flag = true;
-                            OutTextBox.Visible = true;
-                        }
+                        optimalTariff.mobileOperator = thisTariff.mobileOperator;
+                        optimalTariff.name = thisTariff.name;
+                        optimalTariff.money = thisTariff.money;
+                        optimalTariff.gigi = thisTariff.gigi;
+                        optimalTariff.minutes = thisTariff.minutes;
+                        flag = true;
+                        OutTextBox.Visible = true;
                     }
                 }
-                if(flag==true)
+                if (flag == true)
                 {
-                    OutTextBox.Text  = "\n"+optimalTariff.mobileOperator + "\n"
+                    OutTextBox.Text = "\n" + optimalTariff.mobileOperator + "\n"
                                      + optimalTariff.name + "\n"
                                      + optimalTariff.money + " руб/мес\n"
                                      + optimalTariff.gigi + " гиг/мес\n"
@@ -201,16 +175,16 @@ namespace Vs_Progect_Tariff
             }
         }
 
-        private void WriteButton_Click(object sender, EventArgs e)
-        {
-            WriteDBForm writeDB = new WriteDBForm();
-            writeDB.Show();
-        }
-
         private void ShowAllTariffs_Click(object sender, EventArgs e)
         {
             OutTextBox.Text = File.ReadAllText(Path);
             OutTextBox.Visible = true;
+        }
+
+        private void WriteButton_Click(object sender, EventArgs e)
+        {
+            AddDataBaseForm writeDB = new AddDataBaseForm();
+            writeDB.Show();
         }
     }
 }

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Drawing;
 
-namespace Vs_Progect_Tariff
+namespace Project
 {
     static class Program
     {
@@ -18,5 +20,8 @@ namespace Vs_Progect_Tariff
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+
     }
+
+    
 }
