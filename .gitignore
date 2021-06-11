@@ -17,3 +17,4 @@ Vs_Progect_Tariff/*.csproj
 Vs_Progect_Tariff/*.sln
 desktop.ini
 Project/
+bin/*.exe
