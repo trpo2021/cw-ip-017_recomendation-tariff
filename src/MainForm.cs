@@ -12,27 +12,8 @@ using System.IO;
 
 namespace Project
 {
-    
     public partial class MainForm : Form
     {
-        public const string Path = "..\\DataBase.txt";
-        public void Lv(TextBox box, string text)
-        {
-            if (box.Text == "")
-            {
-                box.Text = text;
-                box.ForeColor = Color.Gray;
-            }
-        }
-        public void Ent(TextBox box, string text)
-        {
-            if (box.Text == text)
-            {
-                box.Text = "";
-                box.ForeColor = Color.Black;
-            }
-        }
-
         public MainForm()
         {
             InitializeComponent();
@@ -45,12 +26,10 @@ namespace Project
             UserGigi.ForeColor = Color.Gray;
             UserMinutes.ForeColor = Color.Gray;
         }
-
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void MinimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -70,33 +49,28 @@ namespace Project
         }
         private void UserMoney_Enter(object sender, EventArgs e)
         {
-            Ent(UserMoney, "Введите сумму денег");
+            logic.Ent(UserMoney, "Введите сумму денег");
         }
         private void UserMoney_Leave(object sender, EventArgs e)
         {
-            Lv(UserMoney, "Введите сумму денег");
+            logic.Lv(UserMoney, "Введите сумму денег");
         }
-
         private void UserGigi_Enter(object sender, EventArgs e)
         {
-            Ent(UserGigi, "Введите гиги");
+            logic.Ent(UserGigi, "Введите гиги");
         }
-
         private void UserGigi_Leave(object sender, EventArgs e)
         {
-            Lv(UserGigi, "Введите гиги");
+            logic.Lv(UserGigi, "Введите гиги");
         }
-
         private void UserMinutes_Enter(object sender, EventArgs e)
         {
-            Ent(UserMinutes, "Введите минуты");
+            logic.Ent(UserMinutes, "Введите минуты");
         }
-
         private void UserMinutes_Leave(object sender, EventArgs e)
         {
-            Lv(UserMinutes, "Введите минуты");
+            logic.Lv(UserMinutes, "Введите минуты");
         }
-
         private void StartButton_Click(object sender, EventArgs e)
         {
             if (UserMinutes.Text == "Введите минуты")
@@ -115,7 +89,7 @@ namespace Project
                 return;
             }
             bool flag = false;
-            using (StreamReader sr = new StreamReader(Path))
+            using (StreamReader sr = new StreamReader(logic.Path))
             {
                 ClassTariff thisTariff = new ClassTariff();
                 ClassTariff optimalTariff = new ClassTariff
@@ -141,7 +115,7 @@ namespace Project
                     thisTariff.money = strClass[2];
                     thisTariff.gigi = strClass[3];
                     thisTariff.minutes = strClass[4];
-
+                    //обнуляем все строки класса
                     for (int i = 0; i < 5; ++i)
                         strClass[i] = "";
 
@@ -149,7 +123,7 @@ namespace Project
                         Convert.ToInt32(thisTariff.money) <= Convert.ToInt32(optimalTariff.money) &&
                          Convert.ToInt32(thisTariff.gigi) >= Convert.ToInt32(UserGigi.Text) &&
                          Convert.ToInt32(thisTariff.minutes) >= Convert.ToInt32(UserMinutes.Text) &&
-                         Convert.ToInt32(thisTariff.gigi)+ Convert.ToInt32(thisTariff.minutes)> Convert.ToInt32(optimalTariff.gigi) + Convert.ToInt32(optimalTariff.minutes))
+                         Convert.ToInt32(thisTariff.gigi) + Convert.ToInt32(thisTariff.minutes) > Convert.ToInt32(optimalTariff.gigi) + Convert.ToInt32(optimalTariff.minutes))
                     {
                         optimalTariff.mobileOperator = thisTariff.mobileOperator;
                         optimalTariff.name = thisTariff.name;
@@ -174,13 +148,11 @@ namespace Project
                     MessageBox.Show("К сожалению, такой тариф подобрать не удалось");
             }
         }
-
         private void ShowAllTariffs_Click(object sender, EventArgs e)
         {
-            OutTextBox.Text = File.ReadAllText(Path);
+            OutTextBox.Text = File.ReadAllText(logic.Path);
             OutTextBox.Visible = true;
         }
-
         private void WriteButton_Click(object sender, EventArgs e)
         {
             AddDataBaseForm writeDB = new AddDataBaseForm();

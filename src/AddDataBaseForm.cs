@@ -8,12 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
 namespace Project
 {
     public partial class AddDataBaseForm : Form
     {
-        public const string Path = "..\\DataBase.txt";
+        /*public const string Path = "..\\DataBase.txt";
         public void Lv(TextBox box, string text)
         {
             if (box.Text == "")
@@ -29,7 +28,7 @@ namespace Project
                 box.Text = "";
                 box.ForeColor = Color.Black;
             }
-        }
+        }*/
         public AddDataBaseForm()
         {
             InitializeComponent();
@@ -73,52 +72,52 @@ namespace Project
 
         private void NewTariffOperator_Enter(object sender, EventArgs e)
         {
-            Ent(NewTariffOperator,"Введите оператора");
+            logic.Ent(NewTariffOperator,"Введите оператора");
         }
 
         private void NewTariffOperator_Leave(object sender, EventArgs e)
         {
-            Lv(NewTariffOperator, "Введите оператора");
+            logic.Lv(NewTariffOperator, "Введите оператора");
         }
 
         private void NewTariffName_Enter(object sender, EventArgs e)
         {
-            Ent(NewTariffName, "Введите название тарифа");
+            logic.Ent(NewTariffName, "Введите название тарифа");
         }
 
         private void NewTariffName_Leave(object sender, EventArgs e)
         {
-            Lv(NewTariffName, "Введите название тарифа");
+            logic.Lv(NewTariffName, "Введите название тарифа");
         }
 
         private void NewTariffMoney_Enter(object sender, EventArgs e)
         {
-            Ent(NewTariffMoney, "Введите стоимость");
+            logic.Ent(NewTariffMoney, "Введите стоимость");
         }
 
         private void NewTariffMoney_Leave(object sender, EventArgs e)
         {
-            Lv(NewTariffMoney, "Введите стоимость");
+            logic.Lv(NewTariffMoney, "Введите стоимость");
         }
 
         private void NewTariffGigi_Enter(object sender, EventArgs e)
         {
-            Ent(NewTariffGigi, "Введите кол-во гигов");
+            logic.Ent(NewTariffGigi, "Введите кол-во гигов");
         }
 
         private void NewTariffGigi_Leave(object sender, EventArgs e)
         {
-            Lv(NewTariffGigi, "Введите кол-во гигов");
+            logic.Lv(NewTariffGigi, "Введите кол-во гигов");
         }
 
         private void NewTariffMinutes_Enter(object sender, EventArgs e)
         {
-            Ent(NewTariffMinutes, "Введите кол-во минут");
+            logic.Ent(NewTariffMinutes, "Введите кол-во минут");
         }
 
         private void NewTariffMinutes_Leave(object sender, EventArgs e)
         {
-            Lv(NewTariffMinutes, "Введите кол-во минут");
+            logic.Lv(NewTariffMinutes, "Введите кол-во минут");
         }
 
         private void CreateTariffButton_Click(object sender, EventArgs e)
@@ -149,7 +148,7 @@ namespace Project
                 return;
             }
             string NewTariff ="\n"+NewTariffOperator.Text + ";" + NewTariffName.Text + ";" + NewTariffMoney.Text + ";" + NewTariffGigi.Text + ";" + NewTariffMinutes.Text;
-            File.AppendAllText(Path, NewTariff);
+            File.AppendAllText(logic.Path, NewTariff);
             MessageBox.Show("Тариф добавлен");
             this.Close();
         }
