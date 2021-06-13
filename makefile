@@ -10,10 +10,10 @@ test:
 	compiler\csc.exe /target:exe /out:bin\TESTS_recomendation-tariff.exe src\logic.cs src\Tests.cs
 
 CI: cl
-	compiler\csc /target:winexe /out:bin\recomendation-tariff.exe src\MainForm.cs src\MainForm.Designer.cs src\Program.cs src\logic.cs src\AddDataBaseForm.Designer.cs src\AddDataBaseForm.cs
+	./compiler/csc /target:winexe /out:bin\recomendation-tariff.exe src\MainForm.cs src\MainForm.Designer.cs src\Program.cs src\logic.cs src\AddDataBaseForm.Designer.cs src\AddDataBaseForm.cs
 
 CItest:
-	compiler\csc /target:exe /out:bin\TESTS_recomendation-tariff.exe src\logic.cs src\Tests.cs
+	./compiler/csc /target:exe /out:bin\TESTS_recomendation-tariff.exe src\logic.cs src\Tests.cs
 
 TEST_recomendation-tariff:
-	bin\TESTS_recomendation-tariff
+	./bin/TESTS_recomendation-tariff
