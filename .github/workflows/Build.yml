@@ -13,10 +13,10 @@ jobs:
         run: git ls-files *.{cs} | xargs clang-format -i --verbose && git diff --exit-code
 
       - name: Build application
-        run: make CI
+        run: ./compiler/csc /target:winexe /out:bin\recomendation-tariff.exe src\MainForm.cs src\MainForm.Designer.cs src\Program.cs src\logic.cs src\AddDataBaseForm.Designer.cs src\AddDataBaseForm.cs
 
       - name: Bild tests
-        run: make CItest
+        run: ./compiler/csc /target:exe /out:bin\TESTS_recomendation-tariff.exe src\logic.cs src\Tests.cs
 
       - name: Run tests
         run: ./bin/TEST_recomendation-tariff
