@@ -16,4 +16,4 @@ jobs:
         run: compiler\csc.exe /target:exe /out:bin\TESTS_recomendation-tariff.exe src\logic.cs src\Tests.cs
 
       - name: Run tests
-        run: bin\TEST_recomendation-tariff.exe
+        run: bin\TESTS_recomendation-tariff.exe
