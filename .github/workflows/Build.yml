@@ -4,19 +4,16 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Check codestyle
-        run: git ls-files *.{cs} | xargs clang-format -i --verbose && git diff --exit-code
-
       - name: Build application
-        run: sudo ./compiler/csc.exe /target:winexe /out:bin\recomendation-tariff.exe src\MainForm.cs src\MainForm.Designer.cs src\Program.cs src\logic.cs src\AddDataBaseForm.Designer.cs src\AddDataBaseForm.cs
+        run: compiler\csc.exe /target:winexe /out:bin\recomendation-tariff.exe src\MainForm.cs src\MainForm.Designer.cs src\Program.cs src\logic.cs src\AddDataBaseForm.Designer.cs src\AddDataBaseForm.cs
 
       - name: Bild tests
-        run: sudo ./compiler/csc.exe /target:exe /out:bin\TESTS_recomendation-tariff.exe src\logic.cs src\Tests.cs
+        run: compiler\csc.exe /target:exe /out:bin\TESTS_recomendation-tariff.exe src\logic.cs src\Tests.cs
 
       - name: Run tests
-        run: ./bin/TEST_recomendation-tariff.exe
+        run: bin\TEST_recomendation-tariff.exe
