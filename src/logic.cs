@@ -45,9 +45,15 @@ namespace Project
                     return false;
             return true;
         }
+        public static bool strLenghtIsNorm(string str)
+        {
+            if (str.Length > 0 && str.Length < 6)
+                return true;
+            return false;
+        }
         public static bool isEmpty(TextBox box, string text)
         {
-            if(box.Text==text)
+            if (box.Text == text)
             {
                 MessageBox.Show(text);
                 return true;
@@ -58,7 +64,9 @@ namespace Project
         {
             if (isEmpty(box, text))
                 return false;
-            if(!isNumber(box.Text))
+            if (!strLenghtIsNorm(box.Text))
+                return false;
+            if (!isNumber(box.Text))
             {
                 box.Text = "";
                 MessageBox.Show(text);
