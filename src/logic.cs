@@ -38,5 +38,33 @@ namespace Project
                 box.ForeColor = Color.Black;
             }
         }
+        public static bool isNumber(string str)
+        {
+            for (int i = 0; i < str.Length; ++i)
+                if (str[i] > '9' || str[i] < '0')
+                    return false;
+            return true;
+        }
+        public static bool isEmpty(TextBox box, string text)
+        {
+            if(box.Text==text)
+            {
+                MessageBox.Show(text);
+                return true;
+            }
+            return false;
+        }
+        public static bool isCorectly(TextBox box, string text)
+        {
+            if (isEmpty(box, text))
+                return false;
+            if(!isNumber(box.Text))
+            {
+                box.Text = "";
+                MessageBox.Show(text);
+                return false;
+            }
+            return true;
+        }
     }
 }

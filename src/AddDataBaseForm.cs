@@ -12,23 +12,6 @@ namespace Project
 {
     public partial class AddDataBaseForm : Form
     {
-        /*public const string Path = "..\\DataBase.txt";
-        public void Lv(TextBox box, string text)
-        {
-            if (box.Text == "")
-            {
-                box.Text = text;
-                box.ForeColor = Color.Gray;
-            }
-        }
-        public void Ent(TextBox box, string text)
-        {
-            if (box.Text == text)
-            {
-                box.Text = "";
-                box.ForeColor = Color.Black;
-            }
-        }*/
         public AddDataBaseForm()
         {
             InitializeComponent();
@@ -72,7 +55,7 @@ namespace Project
 
         private void NewTariffOperator_Enter(object sender, EventArgs e)
         {
-            logic.Ent(NewTariffOperator,"Введите оператора");
+            logic.Ent(NewTariffOperator, "Введите оператора");
         }
 
         private void NewTariffOperator_Leave(object sender, EventArgs e)
@@ -122,32 +105,17 @@ namespace Project
 
         private void CreateTariffButton_Click(object sender, EventArgs e)
         {
-            if (NewTariffOperator.Text == "Введите оператора")
-            {
-                MessageBox.Show("Введите оператора");
+            if (!logic.isCorectly(NewTariffOperator, "Введите оператора"))
                 return;
-            }
-            if (NewTariffName.Text == "Введите название тарифа")
-            {
-                MessageBox.Show("Введите название тарифа");
+            if (!logic.isCorectly(NewTariffName, "Введите название тарифа"))
                 return;
-            }
-            if (NewTariffMoney.Text == "Введите стоимость")
-            {
-                MessageBox.Show("Введите стоимость");
+            if (!logic.isCorectly(NewTariffMoney, "Введите стоимость"))
                 return;
-            }
-            if (NewTariffGigi.Text == "Введите кол-во гигов")
-            {
-                MessageBox.Show("Введите кол-во гигов");
+            if (!logic.isCorectly(NewTariffGigi, "Введите кол-во гигов"))
                 return;
-            }
-            if (NewTariffMinutes.Text == "Введите кол-во минут")
-            {
-                MessageBox.Show("Введите кол-во минут");
+            if (!logic.isCorectly(NewTariffMinutes, "Введите кол-во минут"))
                 return;
-            }
-            string NewTariff ="\n"+NewTariffOperator.Text + ";" + NewTariffName.Text + ";" + NewTariffMoney.Text + ";" + NewTariffGigi.Text + ";" + NewTariffMinutes.Text;
+            string NewTariff = "\n" + NewTariffOperator.Text + ";" + NewTariffName.Text + ";" + NewTariffMoney.Text + ";" + NewTariffGigi.Text + ";" + NewTariffMinutes.Text;
             File.AppendAllText(logic.Path, NewTariff);
             MessageBox.Show("Тариф добавлен");
             this.Close();

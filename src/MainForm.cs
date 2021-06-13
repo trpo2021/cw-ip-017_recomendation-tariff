@@ -73,21 +73,12 @@ namespace Project
         }
         private void StartButton_Click(object sender, EventArgs e)
         {
-            if (UserMinutes.Text == "Введите минуты")
-            {
-                MessageBox.Show("Ведите минуты");
+            if (!logic.isCorectly(UserMoney, "Введите сумму денег"))
                 return;
-            }
-            if (UserGigi.Text == "Введиде гиги")
-            {
-                MessageBox.Show("Введите гиги");
+            if (!logic.isCorectly(UserGigi, "Введите гиги"))
                 return;
-            }
-            if (UserMoney.Text == "Введите сумму денег")
-            {
-                MessageBox.Show("Введите сумму денег");
+            if (!logic.isCorectly(UserMinutes, "Введите минуты"))
                 return;
-            }
             bool flag = false;
             using (StreamReader sr = new StreamReader(logic.Path))
             {
