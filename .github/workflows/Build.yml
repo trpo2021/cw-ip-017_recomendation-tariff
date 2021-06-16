@@ -10,10 +10,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build application
-        run: compiler\csc.exe /target:winexe /out:bin\recomendation-tariff.exe src\MainForm.cs src\MainForm.Designer.cs src\Program.cs src\logic.cs src\AddDataBaseForm.Designer.cs src\AddDataBaseForm.cs
+        run: make
 
       - name: Bild tests
-        run: compiler\csc.exe /target:exe /out:bin\TESTS_recomendation-tariff.exe src\logic.cs src\Tests.cs
+        run: make test
 
       - name: Run tests
         run: bin\TESTS_recomendation-tariff.exe
