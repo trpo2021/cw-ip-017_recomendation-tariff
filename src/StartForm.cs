@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class Form2 : Form
+    public partial class StartForm : Form
     {
-        public Form2()
+        public StartForm()
         {
             InitializeComponent();
             timer1.Start();
+            BackgroundImage = Image.FromFile("..\\images\\IconTariff.png");
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < 10; i++)
             {
                 Opacity += 0.1d;
-
             }
         }
     }

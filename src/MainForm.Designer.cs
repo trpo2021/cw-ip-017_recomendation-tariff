@@ -306,6 +306,7 @@ namespace Project
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recomendation tariff";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();

@@ -19,7 +19,7 @@ namespace Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Form2 first = new Form2();
+            StartForm first = new StartForm();
             DateTime end = DateTime.Now + TimeSpan.FromSeconds(5);
             first.Show();
             while(end > DateTime.Now)
