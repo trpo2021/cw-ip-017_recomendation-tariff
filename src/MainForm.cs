@@ -149,5 +149,15 @@ namespace Project
             AddDataBaseForm writeDB = new AddDataBaseForm();
             writeDB.Show();
         }
+
+        private void UserGigi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OutTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

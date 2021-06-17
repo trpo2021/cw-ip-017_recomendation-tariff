@@ -203,6 +203,7 @@ namespace Project
             this.UserMoney.Name = "UserMoney";
             this.UserMoney.Size = new System.Drawing.Size(176, 20);
             this.UserMoney.TabIndex = 19;
+            this.UserMoney.Text = "500";
             this.UserMoney.Enter += new System.EventHandler(this.UserMoney_Enter);
             this.UserMoney.Leave += new System.EventHandler(this.UserMoney_Leave);
             // 
@@ -212,6 +213,8 @@ namespace Project
             this.UserGigi.Name = "UserGigi";
             this.UserGigi.Size = new System.Drawing.Size(176, 20);
             this.UserGigi.TabIndex = 20;
+            this.UserGigi.Text = "10";
+            this.UserGigi.TextChanged += new System.EventHandler(this.UserGigi_TextChanged);
             this.UserGigi.Enter += new System.EventHandler(this.UserGigi_Enter);
             this.UserGigi.Leave += new System.EventHandler(this.UserGigi_Leave);
             // 
@@ -221,6 +224,7 @@ namespace Project
             this.UserMinutes.Name = "UserMinutes";
             this.UserMinutes.Size = new System.Drawing.Size(175, 20);
             this.UserMinutes.TabIndex = 21;
+            this.UserMinutes.Text = "1000";
             this.UserMinutes.Enter += new System.EventHandler(this.UserMinutes_Enter);
             this.UserMinutes.Leave += new System.EventHandler(this.UserMinutes_Leave);
             // 
@@ -229,7 +233,7 @@ namespace Project
             this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.ForeColor = System.Drawing.Color.White;
-            this.StartButton.Location = new System.Drawing.Point(380, 330);
+            this.StartButton.Location = new System.Drawing.Point(379, 330);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(176, 23);
             this.StartButton.TabIndex = 22;
@@ -251,6 +255,7 @@ namespace Project
             this.OutTextBox.TabIndex = 23;
             this.OutTextBox.Text = "";
             this.OutTextBox.Visible = false;
+            this.OutTextBox.TextChanged += new System.EventHandler(this.OutTextBox_TextChanged);
             // 
             // ShowAllTariffs
             // 
