@@ -214,7 +214,6 @@ namespace Project
             this.UserGigi.Size = new System.Drawing.Size(176, 20);
             this.UserGigi.TabIndex = 20;
             this.UserGigi.Text = "10";
-            this.UserGigi.TextChanged += new System.EventHandler(this.UserGigi_TextChanged);
             this.UserGigi.Enter += new System.EventHandler(this.UserGigi_Enter);
             this.UserGigi.Leave += new System.EventHandler(this.UserGigi_Leave);
             // 
@@ -255,7 +254,6 @@ namespace Project
             this.OutTextBox.TabIndex = 23;
             this.OutTextBox.Text = "";
             this.OutTextBox.Visible = false;
-            this.OutTextBox.TextChanged += new System.EventHandler(this.OutTextBox_TextChanged);
             // 
             // ShowAllTariffs
             // 
