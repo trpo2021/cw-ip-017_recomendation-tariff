@@ -141,7 +141,30 @@ namespace Project
         }
         private void ShowAllTariffs_Click(object sender, EventArgs e)
         {
-            OutTextBox.Text = File.ReadAllText(logic.Path);
+            OutTextBox.Text = "";
+            using (StreamReader sr = new StreamReader(logic.Path))
+            {
+                string[] strClass = new string[5];
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    int classUnit = 0;
+                    for (int i = 0; i < line.Length; ++i)
+                    {
+                        if (line[i] == ';')
+                            classUnit++;
+                        else
+                            strClass[classUnit] += line[i];
+                    }
+                    OutTextBox.Text +="Оператор: " + strClass[0] + "\n" 
+                                     + "Тариф: " + strClass[1] + "\n" 
+                                     + "Стоимотсь: " + strClass[2] + " руб/мес\n" 
+                                     + "Интернет: " + strClass[3] + " гиг/мес\n" 
+                                     + "Звонки: " + strClass[4] + " мин/мес\n\n";
+                    for (int i = 0; i < 5; ++i)
+                        strClass[i] = "";
+                }
+            }
             OutTextBox.Visible = true;
         }
         private void WriteButton_Click(object sender, EventArgs e)

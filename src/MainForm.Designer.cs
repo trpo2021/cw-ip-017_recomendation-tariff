@@ -203,7 +203,6 @@ namespace Project
             this.UserMoney.Name = "UserMoney";
             this.UserMoney.Size = new System.Drawing.Size(176, 20);
             this.UserMoney.TabIndex = 19;
-            this.UserMoney.Text = "500";
             this.UserMoney.Enter += new System.EventHandler(this.UserMoney_Enter);
             this.UserMoney.Leave += new System.EventHandler(this.UserMoney_Leave);
             // 
@@ -213,7 +212,6 @@ namespace Project
             this.UserGigi.Name = "UserGigi";
             this.UserGigi.Size = new System.Drawing.Size(176, 20);
             this.UserGigi.TabIndex = 20;
-            this.UserGigi.Text = "10";
             this.UserGigi.Enter += new System.EventHandler(this.UserGigi_Enter);
             this.UserGigi.Leave += new System.EventHandler(this.UserGigi_Leave);
             // 
@@ -223,7 +221,6 @@ namespace Project
             this.UserMinutes.Name = "UserMinutes";
             this.UserMinutes.Size = new System.Drawing.Size(175, 20);
             this.UserMinutes.TabIndex = 21;
-            this.UserMinutes.Text = "1000";
             this.UserMinutes.Enter += new System.EventHandler(this.UserMinutes_Enter);
             this.UserMinutes.Leave += new System.EventHandler(this.UserMinutes_Leave);
             // 
