@@ -53,6 +53,7 @@ namespace Project
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.UserSMS = new System.Windows.Forms.TextBox();
+            this.UnlimitedMessengersCheckBox = new System.Windows.Forms.CheckBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightBorder)).BeginInit();
@@ -234,7 +235,7 @@ namespace Project
             this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.ForeColor = System.Drawing.Color.White;
-            this.StartButton.Location = new System.Drawing.Point(293, 369);
+            this.StartButton.Location = new System.Drawing.Point(293, 391);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(176, 23);
             this.StartButton.TabIndex = 22;
@@ -336,6 +337,18 @@ namespace Project
             this.UserSMS.Enter += new System.EventHandler(this.UserSMS_Enter);
             this.UserSMS.Leave += new System.EventHandler(this.UserSMS_Leave);
             // 
+            // UnlimitedMessengersCheckBox
+            // 
+            this.UnlimitedMessengersCheckBox.AutoSize = true;
+            this.UnlimitedMessengersCheckBox.ForeColor = System.Drawing.Color.White;
+            this.UnlimitedMessengersCheckBox.Location = new System.Drawing.Point(293, 358);
+            this.UnlimitedMessengersCheckBox.Name = "UnlimitedMessengersCheckBox";
+            this.UnlimitedMessengersCheckBox.Size = new System.Drawing.Size(165, 17);
+            this.UnlimitedMessengersCheckBox.TabIndex = 31;
+            this.UnlimitedMessengersCheckBox.Text = "Безлимитные месенджеры";
+            this.UnlimitedMessengersCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnlimitedMessengersCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,6 +356,7 @@ namespace Project
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(975, 535);
             this.ControlBox = false;
+            this.Controls.Add(this.UnlimitedMessengersCheckBox);
             this.Controls.Add(this.UserSMS);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -406,6 +420,7 @@ namespace Project
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox UserSMS;
+        private System.Windows.Forms.CheckBox UnlimitedMessengersCheckBox;
     }
 }
 

@@ -134,7 +134,12 @@ namespace Project
                 return;
             if (!logic.isCorectly(NewTariffSMS, "Введите кол-во СМС"))
                 return;
-            string NewTariff = NewTariffOperator.Text + ";" + NewTariffName.Text + ";" + NewTariffMoney.Text + ";" + NewTariffGigi.Text + ";" + NewTariffMinutes.Text + ";" + NewTariffTV.Text + ";" + NewTariffSMS.Text + "\n";
+
+            string NewTariff = NewTariffOperator.Text + ";" + NewTariffName.Text + ";" + NewTariffMoney.Text + ";" + NewTariffGigi.Text + ";" + NewTariffMinutes.Text + ";" + NewTariffTV.Text + ";" + NewTariffSMS.Text;
+            if (UnlimitedMessengersCheckBox.Checked == true)
+                NewTariff += ";да\n";
+            else
+                NewTariff += ";нет\n";
             File.AppendAllText(logic.Path, NewTariff);
             MessageBox.Show("Тариф добавлен");
             this.Close();

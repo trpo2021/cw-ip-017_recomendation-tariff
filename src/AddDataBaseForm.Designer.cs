@@ -49,6 +49,7 @@ namespace Project
             this.UnlimitedCheckBox = new System.Windows.Forms.CheckBox();
             this.NewTariffTV = new System.Windows.Forms.TextBox();
             this.NewTariffSMS = new System.Windows.Forms.TextBox();
+            this.UnlimitedMessengersCheckBox = new System.Windows.Forms.CheckBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LowerBorder)).BeginInit();
@@ -252,7 +253,7 @@ namespace Project
             this.CreateTariffButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.CreateTariffButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateTariffButton.ForeColor = System.Drawing.Color.White;
-            this.CreateTariffButton.Location = new System.Drawing.Point(163, 272);
+            this.CreateTariffButton.Location = new System.Drawing.Point(163, 287);
             this.CreateTariffButton.Name = "CreateTariffButton";
             this.CreateTariffButton.Size = new System.Drawing.Size(175, 23);
             this.CreateTariffButton.TabIndex = 29;
@@ -291,12 +292,25 @@ namespace Project
             this.NewTariffSMS.Enter += new System.EventHandler(this.NewUserSMS_Enter);
             this.NewTariffSMS.Leave += new System.EventHandler(this.NewUserSMS_Leave);
             // 
+            // UnlimitedMessengersCheckBox
+            // 
+            this.UnlimitedMessengersCheckBox.AutoSize = true;
+            this.UnlimitedMessengersCheckBox.ForeColor = System.Drawing.Color.White;
+            this.UnlimitedMessengersCheckBox.Location = new System.Drawing.Point(163, 255);
+            this.UnlimitedMessengersCheckBox.Name = "UnlimitedMessengersCheckBox";
+            this.UnlimitedMessengersCheckBox.Size = new System.Drawing.Size(165, 17);
+            this.UnlimitedMessengersCheckBox.TabIndex = 33;
+            this.UnlimitedMessengersCheckBox.Text = "Безлимитные месенджеры";
+            this.UnlimitedMessengersCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnlimitedMessengersCheckBox.UseVisualStyleBackColor = true;
+            // 
             // AddDataBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(500, 350);
+            this.Controls.Add(this.UnlimitedMessengersCheckBox);
             this.Controls.Add(this.NewTariffSMS);
             this.Controls.Add(this.NewTariffTV);
             this.Controls.Add(this.UnlimitedCheckBox);
@@ -348,5 +362,6 @@ namespace Project
         private System.Windows.Forms.CheckBox UnlimitedCheckBox;
         private System.Windows.Forms.TextBox NewTariffTV;
         private System.Windows.Forms.TextBox NewTariffSMS;
+        private System.Windows.Forms.CheckBox UnlimitedMessengersCheckBox;
     }
 }

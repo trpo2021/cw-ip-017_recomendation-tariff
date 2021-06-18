@@ -20,7 +20,7 @@ namespace Project
         public string minutes;
         public string NumbersOfTV;
         public string SMS;
-
+        public string UnlimMessengers;
 
     }
     class logic
@@ -94,7 +94,8 @@ namespace Project
                 OutBox.Text += "Интернет: " + strClass[3] + " гиг/мес\n";
             OutBox.Text += "Звонки: " + strClass[4] + " мин/мес\n"
                 + "ТВ каналы: " + strClass[5] + " штук\n"
-                + "SMS: " + strClass[6] + "/месяц\n\n";
+                + "SMS: " + strClass[6] + "/месяц\n"
+                 + "Безлимитные месенджеры: " + strClass[7] + "\n\n";
         }
 
         public static void OutTariff(RichTextBox OutBox, ClassTariff tariff)
@@ -108,7 +109,8 @@ namespace Project
                 OutBox.Text += "Интернет: " + tariff.gigi + " гиг/мес\n";
             OutBox.Text += "Звонки: " + tariff.minutes + " мин/мес\n"
                 + "ТВ каналы: " + tariff.NumbersOfTV + " штук\n"
-                + "SMS: " + tariff.SMS + "/месяц\n\n";
+                + "SMS: " + tariff.SMS + "/месяц\n"
+                + "Безлимитные месенджеры: " + tariff.UnlimMessengers + "\n\n";
         }
 
         public static void UnlimitedCheckChanged(CheckBox cbox, TextBox tbox, string outStr)
