@@ -17,16 +17,13 @@ namespace Project
             InitializeComponent();
             Icon = new Icon("..\\images\\iconTariff.ico");
             IconPicture.Image = Image.FromFile("..\\images\\iconTariff.png");
-            NewTariffMoney.Text = "Введите стоимость";
-            NewTariffMoney.ForeColor = Color.Gray;
-            NewTariffOperator.Text = "Введите оператора";
-            NewTariffOperator.ForeColor = Color.Gray;
-            NewTariffName.Text = "Введите название тарифа";
-            NewTariffName.ForeColor = Color.Gray;
-            NewTariffGigi.Text = "Введите кол-во гигов";
-            NewTariffGigi.ForeColor = Color.Gray;
-            NewTariffMinutes.Text = "Введите кол-во минут";
-            NewTariffMinutes.ForeColor = Color.Gray;
+            logic.TextBoxInit(NewTariffMoney, "Введите стоимость");
+            logic.TextBoxInit(NewTariffOperator, "Введите оператора");
+            logic.TextBoxInit(NewTariffName, "Введите название тарифа");
+            logic.TextBoxInit(NewTariffGigi, "Введите кол-во гигов");
+            logic.TextBoxInit(NewTariffMinutes, "Введите кол-во минут");
+            logic.TextBoxInit(NewTariffTV, "Введите кол-во ТВ каналов");
+            logic.TextBoxInit(NewTariffSMS, "Введите кол-во СМС");
         }
 
         private void CloseButton2_Click(object sender, EventArgs e)
@@ -38,7 +35,9 @@ namespace Project
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
         Point LastPoint;
+
         private void MainPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -103,6 +102,25 @@ namespace Project
         {
             logic.Lv(NewTariffMinutes, "Введите кол-во минут");
         }
+        private void NewUserTV_Enter(object sender, EventArgs e)
+        {
+            logic.Ent(NewTariffTV, "Введите кол-во ТВ каналов");
+        }
+
+        private void NewUserTV_Leave(object sender, EventArgs e)
+        {
+            logic.Lv(NewTariffTV, "Введите кол-во ТВ каналов");
+        }
+
+        private void NewUserSMS_Enter(object sender, EventArgs e)
+        {
+            logic.Ent(NewTariffSMS, "Введите кол-во СМС");
+        }
+
+        private void NewUserSMS_Leave(object sender, EventArgs e)
+        {
+            logic.Lv(NewTariffSMS, "Введите кол-во СМС");
+        }
 
         private void CreateTariffButton_Click(object sender, EventArgs e)
         {
@@ -112,7 +130,11 @@ namespace Project
                 return;
             if (!logic.isCorectly(NewTariffMinutes, "Введите кол-во минут"))
                 return;
-            string NewTariff = "\n" + NewTariffOperator.Text + ";" + NewTariffName.Text + ";" + NewTariffMoney.Text + ";" + NewTariffGigi.Text + ";" + NewTariffMinutes.Text;
+            if (!logic.isCorectly(NewTariffTV, "Введите кол-во ТВ каналов"))
+                return;
+            if (!logic.isCorectly(NewTariffSMS, "Введите кол-во СМС"))
+                return;
+            string NewTariff = NewTariffOperator.Text + ";" + NewTariffName.Text + ";" + NewTariffMoney.Text + ";" + NewTariffGigi.Text + ";" + NewTariffMinutes.Text + ";" + NewTariffTV.Text + ";" + NewTariffSMS.Text + "\n";
             File.AppendAllText(logic.Path, NewTariff);
             MessageBox.Show("Тариф добавлен");
             this.Close();

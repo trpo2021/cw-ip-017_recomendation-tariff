@@ -49,6 +49,10 @@ namespace Project
             this.ShowAllTariffs = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
             this.UnlimitedCheckBox = new System.Windows.Forms.CheckBox();
+            this.UserTV = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.UserSMS = new System.Windows.Forms.TextBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightBorder)).BeginInit();
@@ -209,7 +213,7 @@ namespace Project
             // 
             // UserGigi
             // 
-            this.UserGigi.Location = new System.Drawing.Point(292, 168);
+            this.UserGigi.Location = new System.Drawing.Point(292, 165);
             this.UserGigi.Name = "UserGigi";
             this.UserGigi.Size = new System.Drawing.Size(176, 20);
             this.UserGigi.TabIndex = 20;
@@ -218,7 +222,7 @@ namespace Project
             // 
             // UserMinutes
             // 
-            this.UserMinutes.Location = new System.Drawing.Point(293, 217);
+            this.UserMinutes.Location = new System.Drawing.Point(293, 214);
             this.UserMinutes.Name = "UserMinutes";
             this.UserMinutes.Size = new System.Drawing.Size(175, 20);
             this.UserMinutes.TabIndex = 21;
@@ -230,7 +234,7 @@ namespace Project
             this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.ForeColor = System.Drawing.Color.White;
-            this.StartButton.Location = new System.Drawing.Point(379, 330);
+            this.StartButton.Location = new System.Drawing.Point(293, 369);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(176, 23);
             this.StartButton.TabIndex = 22;
@@ -292,6 +296,46 @@ namespace Project
             this.UnlimitedCheckBox.UseVisualStyleBackColor = true;
             this.UnlimitedCheckBox.CheckedChanged += new System.EventHandler(this.UnlimitedCheckBox_CheckedChanged);
             // 
+            // UserTV
+            // 
+            this.UserTV.Location = new System.Drawing.Point(293, 263);
+            this.UserTV.Name = "UserTV";
+            this.UserTV.Size = new System.Drawing.Size(175, 20);
+            this.UserTV.TabIndex = 27;
+            this.UserTV.Enter += new System.EventHandler(this.UserTV_Enter);
+            this.UserTV.Leave += new System.EventHandler(this.UserTV_Leave);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(12, 263);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(160, 23);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Кол-во ТВ каналов";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(12, 314);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 23);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Кол-во SMS";
+            // 
+            // UserSMS
+            // 
+            this.UserSMS.Location = new System.Drawing.Point(292, 314);
+            this.UserSMS.Name = "UserSMS";
+            this.UserSMS.Size = new System.Drawing.Size(175, 20);
+            this.UserSMS.TabIndex = 30;
+            this.UserSMS.Enter += new System.EventHandler(this.UserSMS_Enter);
+            this.UserSMS.Leave += new System.EventHandler(this.UserSMS_Leave);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +343,10 @@ namespace Project
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(975, 535);
             this.ControlBox = false;
+            this.Controls.Add(this.UserSMS);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.UserTV);
             this.Controls.Add(this.UnlimitedCheckBox);
             this.Controls.Add(this.WriteButton);
             this.Controls.Add(this.ShowAllTariffs);
@@ -354,6 +402,10 @@ namespace Project
         private System.Windows.Forms.Button ShowAllTariffs;
         private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.CheckBox UnlimitedCheckBox;
+        private System.Windows.Forms.TextBox UserTV;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox UserSMS;
     }
 }
 

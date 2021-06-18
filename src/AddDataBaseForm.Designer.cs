@@ -47,6 +47,8 @@ namespace Project
             this.NewTariffMinutes = new System.Windows.Forms.TextBox();
             this.CreateTariffButton = new System.Windows.Forms.Button();
             this.UnlimitedCheckBox = new System.Windows.Forms.CheckBox();
+            this.NewTariffTV = new System.Windows.Forms.TextBox();
+            this.NewTariffSMS = new System.Windows.Forms.TextBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LowerBorder)).BeginInit();
@@ -271,12 +273,32 @@ namespace Project
             this.UnlimitedCheckBox.UseVisualStyleBackColor = true;
             this.UnlimitedCheckBox.CheckedChanged += new System.EventHandler(this.UnlimitedCheckBox_CheckedChanged);
             // 
+            // NewTariffTV
+            // 
+            this.NewTariffTV.Location = new System.Drawing.Point(163, 194);
+            this.NewTariffTV.Name = "NewTariffTV";
+            this.NewTariffTV.Size = new System.Drawing.Size(175, 20);
+            this.NewTariffTV.TabIndex = 31;
+            this.NewTariffTV.Enter += new System.EventHandler(this.NewUserTV_Enter);
+            this.NewTariffTV.Leave += new System.EventHandler(this.NewUserTV_Leave);
+            // 
+            // NewTariffSMS
+            // 
+            this.NewTariffSMS.Location = new System.Drawing.Point(163, 220);
+            this.NewTariffSMS.Name = "NewTariffSMS";
+            this.NewTariffSMS.Size = new System.Drawing.Size(175, 20);
+            this.NewTariffSMS.TabIndex = 32;
+            this.NewTariffSMS.Enter += new System.EventHandler(this.NewUserSMS_Enter);
+            this.NewTariffSMS.Leave += new System.EventHandler(this.NewUserSMS_Leave);
+            // 
             // AddDataBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(500, 350);
+            this.Controls.Add(this.NewTariffSMS);
+            this.Controls.Add(this.NewTariffTV);
             this.Controls.Add(this.UnlimitedCheckBox);
             this.Controls.Add(this.CreateTariffButton);
             this.Controls.Add(this.NewTariffMinutes);
@@ -324,5 +346,7 @@ namespace Project
         private System.Windows.Forms.TextBox NewTariffMinutes;
         private System.Windows.Forms.Button CreateTariffButton;
         private System.Windows.Forms.CheckBox UnlimitedCheckBox;
+        private System.Windows.Forms.TextBox NewTariffTV;
+        private System.Windows.Forms.TextBox NewTariffSMS;
     }
 }

@@ -65,7 +65,6 @@ namespace Project
         {
             if (isEmpty(box.Text, text))
             {
-                box.Text = "";
                 MessageBox.Show("Не все поля заполнены");
                 return false;
             }
@@ -83,6 +82,7 @@ namespace Project
             }
             return true;
         }
+
         public static void OutTariff(RichTextBox OutBox, string[] strClass)
         {
             OutBox.Text += "Оператор: " + strClass[0] + "\n"
@@ -92,8 +92,11 @@ namespace Project
                 OutBox.Text += "Интернет: безлимит\n";
             else
                 OutBox.Text += "Интернет: " + strClass[3] + " гиг/мес\n";
-            OutBox.Text += "Звонки: " + strClass[4] + " мин/мес\n\n";
+            OutBox.Text += "Звонки: " + strClass[4] + " мин/мес\n"
+                + "ТВ каналы: " + strClass[5] + " штук\n"
+                + "SMS: " + strClass[6] + "/месяц\n\n";
         }
+
         public static void OutTariff(RichTextBox OutBox, ClassTariff tariff)
         {
             OutBox.Text += "Оператор: " + tariff.mobileOperator + "\n"
@@ -103,9 +106,12 @@ namespace Project
                 OutBox.Text += "Интернет: безлимит\n";
             else
                 OutBox.Text += "Интернет: " + tariff.gigi + " гиг/мес\n";
-            OutBox.Text += "Звонки: " + tariff.minutes + " мин/мес\n\n";
+            OutBox.Text += "Звонки: " + tariff.minutes + " мин/мес\n"
+                + "ТВ каналы: " + tariff.NumbersOfTV + " штук\n"
+                + "SMS: " + tariff.SMS + "/месяц\n\n";
         }
-        public static void UnlimitedCheckChanged(CheckBox cbox,TextBox tbox, string outStr)
+
+        public static void UnlimitedCheckChanged(CheckBox cbox, TextBox tbox, string outStr)
         {
             if (cbox.Checked == true)
             {
@@ -124,6 +130,12 @@ namespace Project
                 cbox.Checked = true;
             else
                 cbox.Checked = false;
+        }
+
+        public static void TextBoxInit(TextBox box, string text)
+        {
+            box.Text = text;
+            box.ForeColor = Color.Gray;
         }
     }
 }

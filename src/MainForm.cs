@@ -19,12 +19,11 @@ namespace Project
             InitializeComponent();
             Icon = new Icon("..\\images\\iconTariff.ico");
             IconPicture.Image = Image.FromFile("..\\images\\iconTariff.png");
-            UserMoney.Text = "Введите сумму денег";
-            UserGigi.Text = "Введите гиги";
-            UserMinutes.Text = "Введите минуты";
-            UserMoney.ForeColor = Color.Gray;
-            UserGigi.ForeColor = Color.Gray;
-            UserMinutes.ForeColor = Color.Gray;
+            logic.TextBoxInit(UserMoney, "Введите сумму денег");
+            logic.TextBoxInit(UserGigi, "Введите гиги");
+            logic.TextBoxInit(UserMinutes, "Введите минуты");
+            logic.TextBoxInit(UserTV, "Введите ТВ каналы");
+            logic.TextBoxInit(UserSMS, "Введите SMS");
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -73,6 +72,25 @@ namespace Project
         {
             logic.Lv(UserMinutes, "Введите минуты");
         }
+        private void UserTV_Enter(object sender, EventArgs e)
+        {
+            logic.Ent(UserTV, "Введите ТВ каналы");
+        }
+
+        private void UserTV_Leave(object sender, EventArgs e)
+        {
+            logic.Lv(UserTV, "Введите ТВ каналы");
+        }
+
+        private void UserSMS_Enter(object sender, EventArgs e)
+        {
+            logic.Ent(UserSMS, "Введите SMS");
+        }
+
+        private void UserSMS_Leave(object sender, EventArgs e)
+        {
+            logic.Lv(UserSMS, "Введите SMS");
+        }
         private void StartButton_Click(object sender, EventArgs e)
         {
             if (!logic.isCorectly(UserMoney, "Введите сумму денег"))
@@ -80,6 +98,10 @@ namespace Project
             if (!logic.isCorectly(UserGigi, "Введите гиги"))
                 return;
             if (!logic.isCorectly(UserMinutes, "Введите минуты"))
+                return;
+            if (!logic.isCorectly(UserTV, "Введите ТВ каналы"))
+                return;
+            if (!logic.isCorectly(UserSMS, "Введите SMS"))
                 return;
             bool flag = false;
             using (StreamReader sr = new StreamReader(logic.Path))
@@ -89,9 +111,11 @@ namespace Project
                 {
                     money = "1000000",
                     gigi = "0",
-                    minutes = "0"
+                    minutes = "0",
+                    NumbersOfTV = "0",
+                    SMS = "0"
                 };
-                string[] strClass = new string[5];
+                string[] strClass = new string[7];
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
@@ -108,21 +132,29 @@ namespace Project
                     thisTariff.money = strClass[2];
                     thisTariff.gigi = strClass[3];
                     thisTariff.minutes = strClass[4];
+                    thisTariff.NumbersOfTV = strClass[5];
+                    thisTariff.SMS = strClass[6];
                     //обнуляем все строки класса
-                    for (int i = 0; i < 5; ++i)
+                    for (int i = 0; i < strClass.Length; ++i)
                         strClass[i] = "";
 
                     if (Convert.ToInt32(thisTariff.money) <= Convert.ToInt32(UserMoney.Text) &&
                         Convert.ToInt32(thisTariff.money) <= Convert.ToInt32(optimalTariff.money) &&
                          Convert.ToInt32(thisTariff.gigi) >= Convert.ToInt32(UserGigi.Text) &&
                          Convert.ToInt32(thisTariff.minutes) >= Convert.ToInt32(UserMinutes.Text) &&
-                         Convert.ToInt32(thisTariff.gigi) + Convert.ToInt32(thisTariff.minutes) > Convert.ToInt32(optimalTariff.gigi) + Convert.ToInt32(optimalTariff.minutes))
+                         Convert.ToInt32(thisTariff.gigi) + Convert.ToInt32(thisTariff.minutes) + Convert.ToInt32(thisTariff.NumbersOfTV) > Convert.ToInt32(optimalTariff.gigi) + Convert.ToInt32(optimalTariff.minutes) + Convert.ToInt32(optimalTariff.NumbersOfTV) &&
+                          Convert.ToInt32(thisTariff.NumbersOfTV) >= Convert.ToInt32(optimalTariff.NumbersOfTV) &&
+                          Convert.ToInt32(thisTariff.NumbersOfTV) >= Convert.ToInt32(UserTV.Text) &&
+                          Convert.ToInt32(thisTariff.SMS) >= Convert.ToInt32(optimalTariff.SMS) &&
+                          Convert.ToInt32(thisTariff.SMS) >= Convert.ToInt32(UserSMS.Text))
                     {
                         optimalTariff.mobileOperator = thisTariff.mobileOperator;
                         optimalTariff.name = thisTariff.name;
                         optimalTariff.money = thisTariff.money;
                         optimalTariff.gigi = thisTariff.gigi;
                         optimalTariff.minutes = thisTariff.minutes;
+                        optimalTariff.NumbersOfTV = thisTariff.NumbersOfTV;
+                        optimalTariff.SMS = thisTariff.SMS;
                         flag = true;
                         OutTextBox.Visible = true;
                     }
@@ -142,7 +174,7 @@ namespace Project
             OutTextBox.Text = "";
             using (StreamReader sr = new StreamReader(logic.Path))
             {
-                string[] strClass = new string[5];
+                string[] strClass = new string[7];
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
@@ -156,7 +188,7 @@ namespace Project
                     }
                     logic.OutTariff(OutTextBox, strClass);
 
-                    for (int i = 0; i < 5; ++i)
+                    for (int i = 0; i < strClass.Length; ++i)
                         strClass[i] = "";
                 }
             }
@@ -172,5 +204,7 @@ namespace Project
         {
             logic.UnlimitedCheckChanged(UnlimitedCheckBox, UserGigi, "Введите гиги");
         }
+
+        
     }
 }
