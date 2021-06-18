@@ -116,7 +116,7 @@ namespace Project
                 return;
             if (!logic.isCorectly(UserSMS, "Введите SMS"))
                 return;
-            bool flag = false;
+            bool IsHaveOptimalTariff = false;
             using (StreamReader sr = new StreamReader(logic.Path))
             {
                 ClassTariff thisTariff = new ClassTariff();
@@ -132,27 +132,16 @@ namespace Project
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    int classUnit = 0;
-                    for (int i = 0; i < line.Length; ++i)
-                    {
-                        if (line[i] == ';')
-                            classUnit++;
-                        else
-                            strClass[classUnit] += line[i];
-                    }
-                    thisTariff.mobileOperator = strClass[0];
-                    thisTariff.name = strClass[1];
-                    thisTariff.money = strClass[2];
-                    thisTariff.gigi = strClass[3];
-                    thisTariff.minutes = strClass[4];
-                    thisTariff.NumbersOfTV = strClass[5];
-                    thisTariff.SMS = strClass[6];
-                    thisTariff.UnlimMessengers = strClass[7];
+                    strClass = logic.ReadDBLine(line);
+
+                    thisTariff.setValueOf(strClass);
                     //обнуляем все строки класса
                     for (int i = 0; i < strClass.Length; ++i)
                         strClass[i] = "";
+
                     if (UnlimitedMessengersCheckBox.Checked == true && thisTariff.UnlimMessengers == "нет")
                         continue;
+
                     if (Convert.ToInt32(thisTariff.money) <= Convert.ToInt32(UserMoney.Text) &&
                         Convert.ToInt32(thisTariff.money) <= Convert.ToInt32(optimalTariff.money) &&
                          Convert.ToInt32(thisTariff.gigi) >= Convert.ToInt32(UserGigi.Text) &&
@@ -163,19 +152,12 @@ namespace Project
                           Convert.ToInt32(thisTariff.SMS) >= Convert.ToInt32(optimalTariff.SMS) &&
                           Convert.ToInt32(thisTariff.SMS) >= Convert.ToInt32(UserSMS.Text))
                     {
-                        optimalTariff.mobileOperator = thisTariff.mobileOperator;
-                        optimalTariff.name = thisTariff.name;
-                        optimalTariff.money = thisTariff.money;
-                        optimalTariff.gigi = thisTariff.gigi;
-                        optimalTariff.minutes = thisTariff.minutes;
-                        optimalTariff.NumbersOfTV = thisTariff.NumbersOfTV;
-                        optimalTariff.SMS = thisTariff.SMS;
-                        optimalTariff.UnlimMessengers = thisTariff.UnlimMessengers;
-                        flag = true;
+                        optimalTariff.setValueOf(thisTariff);
+                        IsHaveOptimalTariff = true;
                         OutTextBox.Visible = true;
                     }
                 }
-                if (flag == true)
+                if (IsHaveOptimalTariff == true)
                 {
                     OutTextBox.Text = "";
                     logic.OutTariff(OutTextBox, optimalTariff);
@@ -194,14 +176,8 @@ namespace Project
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    int classUnit = 0;
-                    for (int i = 0; i < line.Length; ++i)
-                    {
-                        if (line[i] == ';')
-                            classUnit++;
-                        else
-                            strClass[classUnit] += line[i];
-                    }
+                    strClass = logic.ReadDBLine(line);
+
                     logic.OutTariff(OutTextBox, strClass);
 
                     for (int i = 0; i < strClass.Length; ++i)

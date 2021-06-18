@@ -87,28 +87,19 @@ namespace Project
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    int classUnit = 0;
-                    for (int i = 0; i < line.Length; ++i)
-                    {
-                        if (line[i] == ';')
-                            classUnit++;
-                        else
-                            strClass[classUnit] += line[i];
-                    }
+                    strClass = logic.ReadDBLine(line);
                     if (strClass[0] != DeletedOperator.Text && strClass[1] != DeletedTariff.Text)
                         localDB.Enqueue(strClass[0] + ";" + strClass[1] + ";" + strClass[2] + ";" + strClass[3] + ";" + strClass[4] + ";" + strClass[5] + ";" + strClass[6] + ";" + strClass[7]);
-                   
+
                     for (int i = 0; i < strClass.Length; ++i)
                         strClass[i] = "";
                 }
             }
-            
+
             using (StreamWriter sr = new StreamWriter(logic.Path, false))
             {
-                while(localDB.Count!=0)
-                {
+                while (localDB.Count != 0)
                     sr.WriteLine(localDB.Dequeue());
-                }
             }
             this.Close();
         }

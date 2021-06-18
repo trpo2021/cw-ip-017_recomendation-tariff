@@ -146,6 +146,7 @@ namespace Project
                 return;
 
             string NewTariff = NewTariffOperator.Text + ";" + NewTariffName.Text + ";" + NewTariffMoney.Text + ";" + NewTariffGigi.Text + ";" + NewTariffMinutes.Text + ";" + NewTariffTV.Text + ";" + NewTariffSMS.Text;
+
             if (UnlimitedMessengersCheckBox.Checked == true)
                 NewTariff += ";да\n";
             else

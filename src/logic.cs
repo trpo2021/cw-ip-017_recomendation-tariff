@@ -21,7 +21,28 @@ namespace Project
         public string NumbersOfTV;
         public string SMS;
         public string UnlimMessengers;
-
+        public void setValueOf(ClassTariff tariff)
+        {
+            this.mobileOperator = tariff.mobileOperator;
+            this.name = tariff.name;
+            this.money = tariff.money;
+            this.gigi = tariff.gigi;
+            this.minutes = tariff.minutes;
+            this.NumbersOfTV = tariff.NumbersOfTV;
+            this.SMS = tariff.SMS;
+            this.UnlimMessengers = tariff.UnlimMessengers;
+        }
+        public void setValueOf(string[] tariff)
+        {
+            this.mobileOperator = tariff[0];
+            this.name = tariff[1];
+            this.money = tariff[2];
+            this.gigi = tariff[3];
+            this.minutes = tariff[4];
+            this.NumbersOfTV = tariff[5];
+            this.SMS = tariff[5];
+            this.UnlimMessengers = tariff[7];
+        }
     }
     class logic
     {
@@ -34,6 +55,7 @@ namespace Project
                 box.ForeColor = Color.Gray;
             }
         }
+
         public static void Ent(TextBox box, string text)
         {
             if (box.Text == text)
@@ -42,6 +64,7 @@ namespace Project
                 box.ForeColor = Color.Black;
             }
         }
+
         public static bool isNumber(string str)
         {
             for (int i = 0; i < str.Length; ++i)
@@ -49,18 +72,21 @@ namespace Project
                     return false;
             return true;
         }
+
         public static bool strLenghtIsNorm(string str)
         {
             if (str.Length <= 6)
                 return true;
             return false;
         }
+
         public static bool isEmpty(string boxText, string text)
         {
             if (boxText == text)
                 return true;
             return false;
         }
+
         public static bool isCorectly(TextBox box, string text)
         {
             if (isEmpty(box.Text, text))
@@ -87,7 +113,7 @@ namespace Project
         {
             OutBox.Text += "Оператор: " + strClass[0] + "\n"
                                      + "Тариф: " + strClass[1] + "\n"
-                                     + "Стоимотсь: " + strClass[2] + " руб/мес\n";
+                                     + "Стоимость: " + strClass[2] + " руб/мес\n";
             if (strClass[3] == "999999")
                 OutBox.Text += "Интернет: безлимит\n";
             else
@@ -102,7 +128,7 @@ namespace Project
         {
             OutBox.Text += "Оператор: " + tariff.mobileOperator + "\n"
                                      + "Тариф: " + tariff.name + "\n"
-                                     + "Стоимотсь: " + tariff.money + " руб/мес\n";
+                                     + "Стоимость: " + tariff.money + " руб/мес\n";
             if (tariff.gigi == "999999")
                 OutBox.Text += "Интернет: безлимит\n";
             else
@@ -140,8 +166,9 @@ namespace Project
             box.ForeColor = Color.Gray;
         }
 
-        public static void ReadDBLine(string[] strClass, string line)
+        public static string[] ReadDBLine(string line)
         {
+            string[] strClass = new string[8];
             int classUnit = 0;
             for (int i = 0; i < line.Length; ++i)
             {
@@ -150,6 +177,7 @@ namespace Project
                 else
                     strClass[classUnit] += line[i];
             }
+            return strClass;
         }
     }
 }

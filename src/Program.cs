@@ -10,9 +10,6 @@ namespace Project
 {
     static class Program
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -22,7 +19,7 @@ namespace Project
             StartForm first = new StartForm();
             DateTime end = DateTime.Now + TimeSpan.FromSeconds(5);
             first.Show();
-            while(end > DateTime.Now)
+            while (end > DateTime.Now)
             {
                 Application.DoEvents();
             }
@@ -30,8 +27,5 @@ namespace Project
             first.Dispose();
             Application.Run(new MainForm());
         }
-
     }
-
-
 }
