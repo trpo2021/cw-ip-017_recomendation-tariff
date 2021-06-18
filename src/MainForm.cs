@@ -62,6 +62,8 @@ namespace Project
         private void UserGigi_Leave(object sender, EventArgs e)
         {
             logic.Lv(UserGigi, "Введите гиги");
+            logic.UnlimitedCheckLeave(UnlimitedCheckBox, UserGigi);
+
         }
         private void UserMinutes_Enter(object sender, EventArgs e)
         {
@@ -127,12 +129,8 @@ namespace Project
                 }
                 if (flag == true)
                 {
-                    OutTextBox.Text = "\n" + optimalTariff.mobileOperator + "\n"
-                                     + optimalTariff.name + "\n"
-                                     + optimalTariff.money + " руб/мес\n"
-                                     + optimalTariff.gigi + " гиг/мес\n"
-                                     + optimalTariff.minutes + " мин/мес";
-                    OutTextBox.Visible = true;
+                    OutTextBox.Text = "";
+                    logic.OutTariff(OutTextBox, optimalTariff);
                     MessageBox.Show("Тариф подобран");
                 }
                 else
@@ -156,11 +154,8 @@ namespace Project
                         else
                             strClass[classUnit] += line[i];
                     }
-                    OutTextBox.Text +="Оператор: " + strClass[0] + "\n" 
-                                     + "Тариф: " + strClass[1] + "\n" 
-                                     + "Стоимотсь: " + strClass[2] + " руб/мес\n" 
-                                     + "Интернет: " + strClass[3] + " гиг/мес\n" 
-                                     + "Звонки: " + strClass[4] + " мин/мес\n\n";
+                    logic.OutTariff(OutTextBox, strClass);
+
                     for (int i = 0; i < 5; ++i)
                         strClass[i] = "";
                 }
@@ -171,6 +166,11 @@ namespace Project
         {
             AddDataBaseForm writeDB = new AddDataBaseForm();
             writeDB.Show();
+        }
+
+        private void UnlimitedCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            logic.UnlimitedCheckChanged(UnlimitedCheckBox, UserGigi, "Введите гиги");
         }
     }
 }

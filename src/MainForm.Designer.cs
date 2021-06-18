@@ -48,6 +48,7 @@ namespace Project
             this.OutTextBox = new System.Windows.Forms.RichTextBox();
             this.ShowAllTariffs = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
+            this.UnlimitedCheckBox = new System.Windows.Forms.CheckBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightBorder)).BeginInit();
@@ -199,7 +200,7 @@ namespace Project
             // 
             // UserMoney
             // 
-            this.UserMoney.Location = new System.Drawing.Point(379, 119);
+            this.UserMoney.Location = new System.Drawing.Point(292, 118);
             this.UserMoney.Name = "UserMoney";
             this.UserMoney.Size = new System.Drawing.Size(176, 20);
             this.UserMoney.TabIndex = 19;
@@ -208,7 +209,7 @@ namespace Project
             // 
             // UserGigi
             // 
-            this.UserGigi.Location = new System.Drawing.Point(379, 169);
+            this.UserGigi.Location = new System.Drawing.Point(292, 168);
             this.UserGigi.Name = "UserGigi";
             this.UserGigi.Size = new System.Drawing.Size(176, 20);
             this.UserGigi.TabIndex = 20;
@@ -217,7 +218,7 @@ namespace Project
             // 
             // UserMinutes
             // 
-            this.UserMinutes.Location = new System.Drawing.Point(380, 218);
+            this.UserMinutes.Location = new System.Drawing.Point(293, 217);
             this.UserMinutes.Name = "UserMinutes";
             this.UserMinutes.Size = new System.Drawing.Size(175, 20);
             this.UserMinutes.TabIndex = 21;
@@ -278,6 +279,19 @@ namespace Project
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
             // 
+            // UnlimitedCheckBox
+            // 
+            this.UnlimitedCheckBox.AutoSize = true;
+            this.UnlimitedCheckBox.ForeColor = System.Drawing.Color.White;
+            this.UnlimitedCheckBox.Location = new System.Drawing.Point(474, 171);
+            this.UnlimitedCheckBox.Name = "UnlimitedCheckBox";
+            this.UnlimitedCheckBox.Size = new System.Drawing.Size(76, 17);
+            this.UnlimitedCheckBox.TabIndex = 26;
+            this.UnlimitedCheckBox.Text = "Безлимит";
+            this.UnlimitedCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnlimitedCheckBox.UseVisualStyleBackColor = true;
+            this.UnlimitedCheckBox.CheckedChanged += new System.EventHandler(this.UnlimitedCheckBox_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,6 +299,7 @@ namespace Project
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(975, 535);
             this.ControlBox = false;
+            this.Controls.Add(this.UnlimitedCheckBox);
             this.Controls.Add(this.WriteButton);
             this.Controls.Add(this.ShowAllTariffs);
             this.Controls.Add(this.OutTextBox);
@@ -338,6 +353,7 @@ namespace Project
         private System.Windows.Forms.RichTextBox OutTextBox;
         private System.Windows.Forms.Button ShowAllTariffs;
         private System.Windows.Forms.Button WriteButton;
+        private System.Windows.Forms.CheckBox UnlimitedCheckBox;
     }
 }
 

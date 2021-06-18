@@ -91,6 +91,7 @@ namespace Project
         private void NewTariffGigi_Leave(object sender, EventArgs e)
         {
             logic.Lv(NewTariffGigi, "Введите кол-во гигов");
+            logic.UnlimitedCheckLeave(UnlimitedCheckBox, NewTariffGigi);
         }
 
         private void NewTariffMinutes_Enter(object sender, EventArgs e)
@@ -105,10 +106,6 @@ namespace Project
 
         private void CreateTariffButton_Click(object sender, EventArgs e)
         {
-            if (!logic.isCorectly(NewTariffOperator, "Введите оператора"))
-                return;
-            if (!logic.isCorectly(NewTariffName, "Введите название тарифа"))
-                return;
             if (!logic.isCorectly(NewTariffMoney, "Введите стоимость"))
                 return;
             if (!logic.isCorectly(NewTariffGigi, "Введите кол-во гигов"))
@@ -119,6 +116,11 @@ namespace Project
             File.AppendAllText(logic.Path, NewTariff);
             MessageBox.Show("Тариф добавлен");
             this.Close();
+        }
+
+        private void UnlimitedCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            logic.UnlimitedCheckChanged(UnlimitedCheckBox, NewTariffGigi, "Введите кол-во гигов");
         }
     }
 }

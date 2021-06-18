@@ -18,6 +18,10 @@ namespace Project
         public string money;
         public string gigi;
         public string minutes;
+        public string NumbersOfTV;
+        public string SMS;
+
+
     }
     class logic
     {
@@ -47,32 +51,79 @@ namespace Project
         }
         public static bool strLenghtIsNorm(string str)
         {
-            if (str.Length > 0 && str.Length < 6)
+            if (str.Length <= 6)
                 return true;
             return false;
         }
-        public static bool isEmpty(TextBox box, string text)
+        public static bool isEmpty(string boxText, string text)
         {
-            if (box.Text == text)
-            {
-                MessageBox.Show(text);
+            if (boxText == text)
                 return true;
-            }
             return false;
         }
         public static bool isCorectly(TextBox box, string text)
         {
-            if (isEmpty(box, text))
+            if (isEmpty(box.Text, text))
+            {
+                box.Text = "";
+                MessageBox.Show("Не все поля заполнены");
                 return false;
+            }
             if (!strLenghtIsNorm(box.Text))
+            {
+                box.Text = "999999";
+                MessageBox.Show("Входные данные не могут быть больше 999999");
                 return false;
+            }
             if (!isNumber(box.Text))
             {
                 box.Text = "";
-                MessageBox.Show(text);
+                MessageBox.Show("Вводите только числа");
                 return false;
             }
             return true;
+        }
+        public static void OutTariff(RichTextBox OutBox, string[] strClass)
+        {
+            OutBox.Text += "Оператор: " + strClass[0] + "\n"
+                                     + "Тариф: " + strClass[1] + "\n"
+                                     + "Стоимотсь: " + strClass[2] + " руб/мес\n";
+            if (strClass[3] == "999999")
+                OutBox.Text += "Интернет: безлимит\n";
+            else
+                OutBox.Text += "Интернет: " + strClass[3] + " гиг/мес\n";
+            OutBox.Text += "Звонки: " + strClass[4] + " мин/мес\n\n";
+        }
+        public static void OutTariff(RichTextBox OutBox, ClassTariff tariff)
+        {
+            OutBox.Text += "Оператор: " + tariff.mobileOperator + "\n"
+                                     + "Тариф: " + tariff.name + "\n"
+                                     + "Стоимотсь: " + tariff.money + " руб/мес\n";
+            if (tariff.gigi == "999999")
+                OutBox.Text += "Интернет: безлимит\n";
+            else
+                OutBox.Text += "Интернет: " + tariff.gigi + " гиг/мес\n";
+            OutBox.Text += "Звонки: " + tariff.minutes + " мин/мес\n\n";
+        }
+        public static void UnlimitedCheckChanged(CheckBox cbox,TextBox tbox, string outStr)
+        {
+            if (cbox.Checked == true)
+            {
+                tbox.Text = "999999";
+                tbox.ForeColor = Color.Black;
+            }
+            else
+            {
+                tbox.Text = outStr;
+                tbox.ForeColor = Color.Gray;
+            }
+        }
+        public static void UnlimitedCheckLeave(CheckBox cbox, TextBox tbox)
+        {
+            if (tbox.Text == "999999")
+                cbox.Checked = true;
+            else
+                cbox.Checked = false;
         }
     }
 }

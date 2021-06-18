@@ -46,6 +46,7 @@ namespace Project
             this.NewTariffGigi = new System.Windows.Forms.TextBox();
             this.NewTariffMinutes = new System.Windows.Forms.TextBox();
             this.CreateTariffButton = new System.Windows.Forms.Button();
+            this.UnlimitedCheckBox = new System.Windows.Forms.CheckBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LowerBorder)).BeginInit();
@@ -257,12 +258,26 @@ namespace Project
             this.CreateTariffButton.UseVisualStyleBackColor = true;
             this.CreateTariffButton.Click += new System.EventHandler(this.CreateTariffButton_Click);
             // 
+            // UnlimitedCheckBox
+            // 
+            this.UnlimitedCheckBox.AutoSize = true;
+            this.UnlimitedCheckBox.ForeColor = System.Drawing.Color.White;
+            this.UnlimitedCheckBox.Location = new System.Drawing.Point(344, 144);
+            this.UnlimitedCheckBox.Name = "UnlimitedCheckBox";
+            this.UnlimitedCheckBox.Size = new System.Drawing.Size(76, 17);
+            this.UnlimitedCheckBox.TabIndex = 30;
+            this.UnlimitedCheckBox.Text = "Безлимит";
+            this.UnlimitedCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnlimitedCheckBox.UseVisualStyleBackColor = true;
+            this.UnlimitedCheckBox.CheckedChanged += new System.EventHandler(this.UnlimitedCheckBox_CheckedChanged);
+            // 
             // AddDataBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(500, 350);
+            this.Controls.Add(this.UnlimitedCheckBox);
             this.Controls.Add(this.CreateTariffButton);
             this.Controls.Add(this.NewTariffMinutes);
             this.Controls.Add(this.NewTariffGigi);
@@ -308,5 +323,6 @@ namespace Project
         private System.Windows.Forms.TextBox NewTariffGigi;
         private System.Windows.Forms.TextBox NewTariffMinutes;
         private System.Windows.Forms.Button CreateTariffButton;
+        private System.Windows.Forms.CheckBox UnlimitedCheckBox;
     }
 }
