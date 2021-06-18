@@ -75,16 +75,12 @@ namespace Project
 
         public static bool strLenghtIsNorm(string str)
         {
-            if (str.Length <= 6)
-                return true;
-            return false;
+            return str.Length <= 6;
         }
 
         public static bool isEmpty(string boxText, string text)
         {
-            if (boxText == text)
-                return true;
-            return false;
+            return boxText == text;
         }
 
         public static bool isCorectly(TextBox box, string text)
