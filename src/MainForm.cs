@@ -220,5 +220,11 @@ namespace Project
         {
             logic.UnlimitedCheckChanged(UnlimitedCheckBox, UserGigi, "Введите гиги");
         }
+
+        private void DeletedTariffButton_Click(object sender, EventArgs e)
+        {
+            DeletedDataBaseForm DeleteDB = new DeletedDataBaseForm();
+            DeleteDB.Show();
+        }
     }
 }

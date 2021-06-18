@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class AddDataBaseForm
+    partial class DeletedDataBaseForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,26 +36,21 @@ namespace Project
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.IconPicture = new System.Windows.Forms.PictureBox();
             this.CloseButton = new System.Windows.Forms.Button();
-            this.DownBorder = new System.Windows.Forms.PictureBox();
             this.RightBorder = new System.Windows.Forms.PictureBox();
             this.LeftBorder = new System.Windows.Forms.PictureBox();
+            this.DownBorder = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.NewTariffOperator = new System.Windows.Forms.TextBox();
-            this.NewTariffName = new System.Windows.Forms.TextBox();
-            this.NewTariffMoney = new System.Windows.Forms.TextBox();
-            this.NewTariffGigi = new System.Windows.Forms.TextBox();
-            this.NewTariffMinutes = new System.Windows.Forms.TextBox();
-            this.CreateTariffButton = new System.Windows.Forms.Button();
-            this.UnlimitedCheckBox = new System.Windows.Forms.CheckBox();
-            this.NewTariffTV = new System.Windows.Forms.TextBox();
-            this.NewTariffSMS = new System.Windows.Forms.TextBox();
-            this.UnlimitedMessengersCheckBox = new System.Windows.Forms.CheckBox();
+            this.UpBorder = new System.Windows.Forms.PictureBox();
+            this.DeletedOperator = new System.Windows.Forms.TextBox();
+            this.DeletedTariff = new System.Windows.Forms.TextBox();
+            this.StartDeletingButton = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DownBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftBorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DownBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpBorder)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -71,7 +66,7 @@ namespace Project
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(500, 31);
-            this.MainPanel.TabIndex = 18;
+            this.MainPanel.TabIndex = 19;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
             // 
@@ -166,175 +161,108 @@ namespace Project
             this.CloseButton.Text = "X";
             this.CloseButton.UseVisualStyleBackColor = false;
             // 
-            // DownBorder
-            // 
-            this.DownBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.DownBorder.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DownBorder.Location = new System.Drawing.Point(0, 349);
-            this.DownBorder.Name = "DownBorder";
-            this.DownBorder.Size = new System.Drawing.Size(500, 1);
-            this.DownBorder.TabIndex = 19;
-            this.DownBorder.TabStop = false;
-            // 
             // RightBorder
             // 
             this.RightBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.RightBorder.Location = new System.Drawing.Point(499, 0);
+            this.RightBorder.Location = new System.Drawing.Point(499, 5);
             this.RightBorder.Name = "RightBorder";
             this.RightBorder.Size = new System.Drawing.Size(1, 350);
-            this.RightBorder.TabIndex = 20;
+            this.RightBorder.TabIndex = 21;
             this.RightBorder.TabStop = false;
             // 
             // LeftBorder
             // 
             this.LeftBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.LeftBorder.Location = new System.Drawing.Point(0, 0);
+            this.LeftBorder.Location = new System.Drawing.Point(0, 3);
             this.LeftBorder.Name = "LeftBorder";
-            this.LeftBorder.Size = new System.Drawing.Size(1, 348);
-            this.LeftBorder.TabIndex = 21;
+            this.LeftBorder.Size = new System.Drawing.Size(1, 350);
+            this.LeftBorder.TabIndex = 22;
             this.LeftBorder.TabStop = false;
+            // 
+            // DownBorder
+            // 
+            this.DownBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.DownBorder.Location = new System.Drawing.Point(0, 349);
+            this.DownBorder.Name = "DownBorder";
+            this.DownBorder.Size = new System.Drawing.Size(500, 1);
+            this.DownBorder.TabIndex = 23;
+            this.DownBorder.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(500, 1);
-            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
-            // NewTariffOperator
+            // UpBorder
             // 
-            this.NewTariffOperator.Location = new System.Drawing.Point(163, 64);
-            this.NewTariffOperator.Name = "NewTariffOperator";
-            this.NewTariffOperator.Size = new System.Drawing.Size(175, 20);
-            this.NewTariffOperator.TabIndex = 24;
-            this.NewTariffOperator.Enter += new System.EventHandler(this.NewTariffOperator_Enter);
-            this.NewTariffOperator.Leave += new System.EventHandler(this.NewTariffOperator_Leave);
+            this.UpBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.UpBorder.Location = new System.Drawing.Point(0, 0);
+            this.UpBorder.Name = "UpBorder";
+            this.UpBorder.Size = new System.Drawing.Size(500, 1);
+            this.UpBorder.TabIndex = 25;
+            this.UpBorder.TabStop = false;
             // 
-            // NewTariffName
+            // DeletedOperator
             // 
-            this.NewTariffName.Location = new System.Drawing.Point(163, 90);
-            this.NewTariffName.Name = "NewTariffName";
-            this.NewTariffName.Size = new System.Drawing.Size(175, 20);
-            this.NewTariffName.TabIndex = 25;
-            this.NewTariffName.Enter += new System.EventHandler(this.NewTariffName_Enter);
-            this.NewTariffName.Leave += new System.EventHandler(this.NewTariffName_Leave);
+            this.DeletedOperator.Location = new System.Drawing.Point(162, 86);
+            this.DeletedOperator.Name = "DeletedOperator";
+            this.DeletedOperator.Size = new System.Drawing.Size(176, 20);
+            this.DeletedOperator.TabIndex = 26;
+            this.DeletedOperator.Enter += new System.EventHandler(this.DeletedOperator_Enter);
+            this.DeletedOperator.Leave += new System.EventHandler(this.DeletedOperator_Leave);
             // 
-            // NewTariffMoney
+            // DeletedTariff
             // 
-            this.NewTariffMoney.Location = new System.Drawing.Point(163, 116);
-            this.NewTariffMoney.Name = "NewTariffMoney";
-            this.NewTariffMoney.Size = new System.Drawing.Size(175, 20);
-            this.NewTariffMoney.TabIndex = 26;
-            this.NewTariffMoney.Enter += new System.EventHandler(this.NewTariffMoney_Enter);
-            this.NewTariffMoney.Leave += new System.EventHandler(this.NewTariffMoney_Leave);
+            this.DeletedTariff.Location = new System.Drawing.Point(162, 112);
+            this.DeletedTariff.Name = "DeletedTariff";
+            this.DeletedTariff.Size = new System.Drawing.Size(176, 20);
+            this.DeletedTariff.TabIndex = 27;
+            this.DeletedTariff.Enter += new System.EventHandler(this.DeletedTariff_Enter);
+            this.DeletedTariff.Leave += new System.EventHandler(this.DeletedTariff_Leave);
             // 
-            // NewTariffGigi
+            // StartDeletingButton
             // 
-            this.NewTariffGigi.Location = new System.Drawing.Point(163, 142);
-            this.NewTariffGigi.Name = "NewTariffGigi";
-            this.NewTariffGigi.Size = new System.Drawing.Size(175, 20);
-            this.NewTariffGigi.TabIndex = 27;
-            this.NewTariffGigi.Enter += new System.EventHandler(this.NewTariffGigi_Enter);
-            this.NewTariffGigi.Leave += new System.EventHandler(this.NewTariffGigi_Leave);
+            this.StartDeletingButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.StartDeletingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartDeletingButton.ForeColor = System.Drawing.Color.White;
+            this.StartDeletingButton.Location = new System.Drawing.Point(162, 261);
+            this.StartDeletingButton.Name = "StartDeletingButton";
+            this.StartDeletingButton.Size = new System.Drawing.Size(176, 23);
+            this.StartDeletingButton.TabIndex = 28;
+            this.StartDeletingButton.Text = "Удалить тариф";
+            this.StartDeletingButton.UseVisualStyleBackColor = true;
+            this.StartDeletingButton.Click += new System.EventHandler(this.StartDeletingButton_Click);
             // 
-            // NewTariffMinutes
-            // 
-            this.NewTariffMinutes.Location = new System.Drawing.Point(163, 168);
-            this.NewTariffMinutes.Name = "NewTariffMinutes";
-            this.NewTariffMinutes.Size = new System.Drawing.Size(175, 20);
-            this.NewTariffMinutes.TabIndex = 28;
-            this.NewTariffMinutes.Enter += new System.EventHandler(this.NewTariffMinutes_Enter);
-            this.NewTariffMinutes.Leave += new System.EventHandler(this.NewTariffMinutes_Leave);
-            // 
-            // CreateTariffButton
-            // 
-            this.CreateTariffButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.CreateTariffButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateTariffButton.ForeColor = System.Drawing.Color.White;
-            this.CreateTariffButton.Location = new System.Drawing.Point(163, 287);
-            this.CreateTariffButton.Name = "CreateTariffButton";
-            this.CreateTariffButton.Size = new System.Drawing.Size(175, 23);
-            this.CreateTariffButton.TabIndex = 29;
-            this.CreateTariffButton.Text = "Добавить новый тариф";
-            this.CreateTariffButton.UseVisualStyleBackColor = true;
-            this.CreateTariffButton.Click += new System.EventHandler(this.CreateTariffButton_Click);
-            // 
-            // UnlimitedCheckBox
-            // 
-            this.UnlimitedCheckBox.AutoSize = true;
-            this.UnlimitedCheckBox.ForeColor = System.Drawing.Color.White;
-            this.UnlimitedCheckBox.Location = new System.Drawing.Point(344, 144);
-            this.UnlimitedCheckBox.Name = "UnlimitedCheckBox";
-            this.UnlimitedCheckBox.Size = new System.Drawing.Size(76, 17);
-            this.UnlimitedCheckBox.TabIndex = 30;
-            this.UnlimitedCheckBox.Text = "Безлимит";
-            this.UnlimitedCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.UnlimitedCheckBox.UseVisualStyleBackColor = true;
-            this.UnlimitedCheckBox.CheckedChanged += new System.EventHandler(this.UnlimitedCheckBox_CheckedChanged);
-            // 
-            // NewTariffTV
-            // 
-            this.NewTariffTV.Location = new System.Drawing.Point(163, 194);
-            this.NewTariffTV.Name = "NewTariffTV";
-            this.NewTariffTV.Size = new System.Drawing.Size(175, 20);
-            this.NewTariffTV.TabIndex = 31;
-            this.NewTariffTV.Enter += new System.EventHandler(this.NewUserTV_Enter);
-            this.NewTariffTV.Leave += new System.EventHandler(this.NewUserTV_Leave);
-            // 
-            // NewTariffSMS
-            // 
-            this.NewTariffSMS.Location = new System.Drawing.Point(163, 220);
-            this.NewTariffSMS.Name = "NewTariffSMS";
-            this.NewTariffSMS.Size = new System.Drawing.Size(175, 20);
-            this.NewTariffSMS.TabIndex = 32;
-            this.NewTariffSMS.Enter += new System.EventHandler(this.NewUserSMS_Enter);
-            this.NewTariffSMS.Leave += new System.EventHandler(this.NewUserSMS_Leave);
-            // 
-            // UnlimitedMessengersCheckBox
-            // 
-            this.UnlimitedMessengersCheckBox.AutoSize = true;
-            this.UnlimitedMessengersCheckBox.ForeColor = System.Drawing.Color.White;
-            this.UnlimitedMessengersCheckBox.Location = new System.Drawing.Point(163, 255);
-            this.UnlimitedMessengersCheckBox.Name = "UnlimitedMessengersCheckBox";
-            this.UnlimitedMessengersCheckBox.Size = new System.Drawing.Size(165, 17);
-            this.UnlimitedMessengersCheckBox.TabIndex = 33;
-            this.UnlimitedMessengersCheckBox.Text = "Безлимитные месенджеры";
-            this.UnlimitedMessengersCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.UnlimitedMessengersCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // AddDataBaseForm
+            // DeletedDataBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(500, 350);
-            this.Controls.Add(this.UnlimitedMessengersCheckBox);
-            this.Controls.Add(this.NewTariffSMS);
-            this.Controls.Add(this.NewTariffTV);
-            this.Controls.Add(this.UnlimitedCheckBox);
-            this.Controls.Add(this.CreateTariffButton);
-            this.Controls.Add(this.NewTariffMinutes);
-            this.Controls.Add(this.NewTariffGigi);
-            this.Controls.Add(this.NewTariffMoney);
-            this.Controls.Add(this.NewTariffName);
-            this.Controls.Add(this.NewTariffOperator);
+            this.Controls.Add(this.StartDeletingButton);
+            this.Controls.Add(this.DeletedTariff);
+            this.Controls.Add(this.DeletedOperator);
+            this.Controls.Add(this.UpBorder);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.DownBorder);
             this.Controls.Add(this.LeftBorder);
             this.Controls.Add(this.RightBorder);
-            this.Controls.Add(this.DownBorder);
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddDataBaseForm";
-            this.Text = "Add into a Data Base";
+            this.Name = "DeletedDataBaseForm";
+            this.Text = "DeletedDataBaseForm";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DownBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftBorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DownBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpBorder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,25 +271,19 @@ namespace Project
         #endregion
 
         private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button CloseButton2;
+        private System.Windows.Forms.Button MinimizeButton2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.PictureBox IconPicture;
         private System.Windows.Forms.Button CloseButton;
-        private System.Windows.Forms.Button MinimizeButton2;
-        private System.Windows.Forms.PictureBox DownBorder;
         private System.Windows.Forms.PictureBox RightBorder;
         private System.Windows.Forms.PictureBox LeftBorder;
+        private System.Windows.Forms.PictureBox DownBorder;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button CloseButton2;
-        private System.Windows.Forms.TextBox NewTariffOperator;
-        private System.Windows.Forms.TextBox NewTariffName;
-        private System.Windows.Forms.TextBox NewTariffMoney;
-        private System.Windows.Forms.TextBox NewTariffGigi;
-        private System.Windows.Forms.TextBox NewTariffMinutes;
-        private System.Windows.Forms.Button CreateTariffButton;
-        private System.Windows.Forms.CheckBox UnlimitedCheckBox;
-        private System.Windows.Forms.TextBox NewTariffTV;
-        private System.Windows.Forms.TextBox NewTariffSMS;
-        private System.Windows.Forms.CheckBox UnlimitedMessengersCheckBox;
+        private System.Windows.Forms.PictureBox UpBorder;
+        private System.Windows.Forms.TextBox DeletedOperator;
+        private System.Windows.Forms.TextBox DeletedTariff;
+        private System.Windows.Forms.Button StartDeletingButton;
     }
 }

@@ -47,13 +47,14 @@ namespace Project
             this.StartButton = new System.Windows.Forms.Button();
             this.OutTextBox = new System.Windows.Forms.RichTextBox();
             this.ShowAllTariffs = new System.Windows.Forms.Button();
-            this.WriteButton = new System.Windows.Forms.Button();
+            this.AddTariffButton = new System.Windows.Forms.Button();
             this.UnlimitedCheckBox = new System.Windows.Forms.CheckBox();
             this.UserTV = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.UserSMS = new System.Windows.Forms.TextBox();
             this.UnlimitedMessengersCheckBox = new System.Windows.Forms.CheckBox();
+            this.DeletedTariffButton = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightBorder)).BeginInit();
@@ -263,7 +264,7 @@ namespace Project
             this.ShowAllTariffs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ShowAllTariffs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowAllTariffs.ForeColor = System.Drawing.Color.White;
-            this.ShowAllTariffs.Location = new System.Drawing.Point(560, 500);
+            this.ShowAllTariffs.Location = new System.Drawing.Point(333, 500);
             this.ShowAllTariffs.Name = "ShowAllTariffs";
             this.ShowAllTariffs.Size = new System.Drawing.Size(176, 23);
             this.ShowAllTariffs.TabIndex = 24;
@@ -271,18 +272,18 @@ namespace Project
             this.ShowAllTariffs.UseVisualStyleBackColor = true;
             this.ShowAllTariffs.Click += new System.EventHandler(this.ShowAllTariffs_Click);
             // 
-            // WriteButton
+            // AddTariffButton
             // 
-            this.WriteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.WriteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WriteButton.ForeColor = System.Drawing.Color.White;
-            this.WriteButton.Location = new System.Drawing.Point(742, 500);
-            this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(221, 23);
-            this.WriteButton.TabIndex = 25;
-            this.WriteButton.Text = "Добавить новый тариф в базу данных";
-            this.WriteButton.UseVisualStyleBackColor = true;
-            this.WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
+            this.AddTariffButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.AddTariffButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddTariffButton.ForeColor = System.Drawing.Color.White;
+            this.AddTariffButton.Location = new System.Drawing.Point(742, 500);
+            this.AddTariffButton.Name = "AddTariffButton";
+            this.AddTariffButton.Size = new System.Drawing.Size(221, 23);
+            this.AddTariffButton.TabIndex = 25;
+            this.AddTariffButton.Text = "Добавить новый тариф в базу данных";
+            this.AddTariffButton.UseVisualStyleBackColor = true;
+            this.AddTariffButton.Click += new System.EventHandler(this.WriteButton_Click);
             // 
             // UnlimitedCheckBox
             // 
@@ -349,6 +350,19 @@ namespace Project
             this.UnlimitedMessengersCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.UnlimitedMessengersCheckBox.UseVisualStyleBackColor = true;
             // 
+            // DeletedTariffButton
+            // 
+            this.DeletedTariffButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.DeletedTariffButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeletedTariffButton.ForeColor = System.Drawing.Color.White;
+            this.DeletedTariffButton.Location = new System.Drawing.Point(515, 500);
+            this.DeletedTariffButton.Name = "DeletedTariffButton";
+            this.DeletedTariffButton.Size = new System.Drawing.Size(221, 23);
+            this.DeletedTariffButton.TabIndex = 32;
+            this.DeletedTariffButton.Text = "Удалить тариф из базы данных";
+            this.DeletedTariffButton.UseVisualStyleBackColor = true;
+            this.DeletedTariffButton.Click += new System.EventHandler(this.DeletedTariffButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,13 +370,14 @@ namespace Project
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(975, 535);
             this.ControlBox = false;
+            this.Controls.Add(this.DeletedTariffButton);
             this.Controls.Add(this.UnlimitedMessengersCheckBox);
             this.Controls.Add(this.UserSMS);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.UserTV);
             this.Controls.Add(this.UnlimitedCheckBox);
-            this.Controls.Add(this.WriteButton);
+            this.Controls.Add(this.AddTariffButton);
             this.Controls.Add(this.ShowAllTariffs);
             this.Controls.Add(this.OutTextBox);
             this.Controls.Add(this.StartButton);
@@ -414,13 +429,14 @@ namespace Project
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.RichTextBox OutTextBox;
         private System.Windows.Forms.Button ShowAllTariffs;
-        private System.Windows.Forms.Button WriteButton;
+        private System.Windows.Forms.Button AddTariffButton;
         private System.Windows.Forms.CheckBox UnlimitedCheckBox;
         private System.Windows.Forms.TextBox UserTV;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox UserSMS;
         private System.Windows.Forms.CheckBox UnlimitedMessengersCheckBox;
+        private System.Windows.Forms.Button DeletedTariffButton;
     }
 }
 

@@ -124,6 +124,16 @@ namespace Project
 
         private void CreateTariffButton_Click(object sender, EventArgs e)
         {
+            if (NewTariffOperator.Text == "Введите оператора")
+            {
+                MessageBox.Show("Введите оператора");
+                return;
+            }
+            if (NewTariffName.Text == "Введите название тарифа")
+            {
+                MessageBox.Show("Введите название тарифа");
+                return;
+            }
             if (!logic.isCorectly(NewTariffMoney, "Введите стоимость"))
                 return;
             if (!logic.isCorectly(NewTariffGigi, "Введите кол-во гигов"))

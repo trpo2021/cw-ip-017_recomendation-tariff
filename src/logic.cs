@@ -139,5 +139,17 @@ namespace Project
             box.Text = text;
             box.ForeColor = Color.Gray;
         }
+
+        public static void ReadDBLine(string[] strClass, string line)
+        {
+            int classUnit = 0;
+            for (int i = 0; i < line.Length; ++i)
+            {
+                if (line[i] == ';')
+                    classUnit++;
+                else
+                    strClass[classUnit] += line[i];
+            }
+        }
     }
 }
