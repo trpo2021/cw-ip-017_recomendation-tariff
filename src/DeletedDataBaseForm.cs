@@ -83,7 +83,7 @@ namespace Project
                 while ((line = sr.ReadLine()) != null)
                 {
                     strClass = logic.ReadDBLine(line);
-                    if (strClass[0] != DeletedOperator.Text && strClass[1] != DeletedTariff.Text)
+                    if (String.Compare(strClass[0],DeletedOperator.Text)!=0 || String.Compare(strClass[1], DeletedTariff.Text)!=0)
                         localDB.Enqueue(strClass[0] + ";" + strClass[1] + ";" + strClass[2] + ";" + strClass[3] + ";" + strClass[4] + ";" + strClass[5] + ";" + strClass[6] + ";" + strClass[7]);
 
                     for (int i = 0; i < strClass.Length; ++i)
