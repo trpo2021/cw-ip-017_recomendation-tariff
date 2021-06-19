@@ -1,0 +1,19 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build application
+        run: make
+
+      - name: Bild tests
+        run: make test
+
+      - name: Run tests
+        run: bin\TESTS_recomendation-tariff.exe
