@@ -38,7 +38,12 @@ namespace Project
         public static bool TEST(string nameTest, string[] res, string[] value)
         {
             if (res.Length != value.Length)
+            {
+                System.Console.Write($"{nameTest}  crash. Expected the lenght {value.Length}, got the {res.Length}\n");
+                CountTestsFailed++;
                 return false;
+            }
+
             for (int i = 0; i < res.Length; ++i)
                 if (res[i] != value[i])
                 {
@@ -62,7 +67,7 @@ namespace Project
             string[] strClass = new string[8];
             string line = "0;1;2;3;4;5;6;7";
             for (int i = 0; i < 8; ++i)
-                strClass[i] +=i;
+                strClass[i] += i;
 
             TEST("test readDBLine", ReadDBLine(line), strClass);
             System.Console.Write($"Completed tests: {CountTestsPassed}\tFailed Tests: {CountTestsFailed}");
